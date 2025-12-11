@@ -19,7 +19,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
   const controlsRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to highlighted elements during walkthrough
+  // auto-scroll to highlighted elements during walkthrough
   useEffect(() => {
     if (tutorialStep === 1 && controlsRef.current) {
       controlsRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -59,7 +59,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
     });
   }, [searchTerm, selectedTopic]);
 
-  // Determine Dialog Position based on step
+  // determine dialog position based on step
   const getDialogPosition = () => {
     switch (tutorialStep) {
       case 0: return 'bottom-8'; // Welcome - Bottom
@@ -162,7 +162,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
         {/* Main Background Image - Layered First (Behind everything) */}
         <div className="absolute inset-0 z-0">
            <ImageWithLoader 
-             src="https://i.imgur.com/u8c9kJ7.jpeg" 
+             src="gigapixel-u8c9kJ7.webp" 
              alt="World Map Background" 
              containerClassName="w-full h-full"
              className="w-full h-full object-cover opacity-80"
@@ -270,7 +270,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
                   key={lecture.id} 
                   lecture={lecture} 
                   onClick={(id) => {
-                    // If tutorial is active, handle manual click gracefully
+                    // if tutorial is active, handle manual click gracefully
                     if (tutorialStep === 2) {
                       setTutorialStep(3);
                     }

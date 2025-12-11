@@ -8,7 +8,7 @@ export const LECTURES: Lecture[] = [
       title: 'Earthquake Hazards & Effects',
       description: 'A comprehensive guide to primary and secondary earthquake hazards, including ground shaking, liquefaction, and tsunamis.',
       topic: 'Earthquake',
-      imageUrl: 'https://i.imgur.com/uI1W4uP.jpeg',
+      imageUrl: '/19e4a3c9-78f1-48f6-8d76-327cee5077d3.jpg',
       readTime: 10,
       difficulty: 'Intermediate',
       objectives: [
@@ -150,7 +150,7 @@ export const LECTURES: Lecture[] = [
               </div>
 
               <!-- Title -->
-              <h3 class="text-5xl md:text-7xl font-russo font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600 uppercase tracking-tighter drop-shadow-2xl">
+              <h3 class="text-5xl font-russo font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600 uppercase tracking-tighter drop-shadow-2xl">
                 Earthquakes
               </h3>
             </div>
@@ -160,11 +160,11 @@ export const LECTURES: Lecture[] = [
                <div class="bg-white/5 border-2 border-white/10 p-6 md:p-8 rounded-[2.5rem] backdrop-blur-sm relative overflow-hidden group hover:bg-white/10 transition-all duration-500 hover:shadow-[0_0_60px_rgba(249,115,22,0.15)] hover:border-orange-500/30">
                   <div class="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-[120px] group-hover:bg-orange-500/20 transition-all"></div>
                   
-                  <p class="text-3xl md:text-4xl text-slate-100 font-light leading-snug relative z-10 text-center mb-6 font-chakra">
+                  <p class="text-3xl text-slate-100 font-light leading-snug relative z-10 text-center mb-6 font-chakra">
                     <span class="font-bold text-orange-400 font-russo uppercase tracking-wide">Earthquakes</span> are among the most destructive natural hazards on Earth.
                   </p>
                   
-                  <p class="text-xl md:text-3xl text-slate-300 font-light leading-snug relative z-10 text-center mb-8 font-chakra">
+                  <p class="text-xl text-slate-300 font-light leading-snug relative z-10 text-center mb-8 font-chakra">
                     Their impacts go beyond ground shaking—they trigger a chain of <span class="font-bold text-white border-b-4 border-orange-500/50 hover:bg-orange-500/20 transition-colors px-1">secondary hazards</span> that pose immediate threats.
                   </p>
 
@@ -209,16 +209,15 @@ export const LECTURES: Lecture[] = [
             content: `
           <div class="flex flex-col space-y-8 animate-in fade-in duration-700 py-6">
             
-            <div class="relative z-10">
-              <h3 class="text-4xl md:text-5xl font-russo font-black text-white mb-6 uppercase tracking-tight drop-shadow-lg">
-                Ground Shaking
-              </h3>
-              
+            <div class="relative z-10">              
               <div class="grid grid-cols-1 gap-6 items-center">
                  <div class="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-sm hover:shadow-[0_0_30px_rgba(249,115,22,0.2)] transition-all duration-500 hover:border-orange-500/30 group">
-                    <p class="text-2xl text-slate-200 leading-relaxed mb-6 font-chakra font-light">
+                     <h3 class="text-4xl font-russo font-black text-white mb-2 uppercase tracking-tight drop-shadow-lg">
+                        Ground Shaking
+                     </h3>   
+                     <p class="text-slate-200 leading-relaxed mb-2 font-chakra font-light">
                       The vibration of the ground caused by the sudden release of energy during an earthquake.
-                    </p>
+                     </p>
                     <div class="h-32 flex items-center justify-center bg-black/60 rounded-2xl overflow-hidden relative border border-white/10 shadow-inner">
                        <style>
                           @keyframes seismic-scroll {
@@ -248,56 +247,48 @@ export const LECTURES: Lecture[] = [
                  </div>
 
                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all hover:-translate-y-2 duration-300">
-                       <h4 class="text-2xl font-russo text-orange-400 mb-4 uppercase tracking-wide flex items-center">
+                    <div class="bg-white/5 border border-white/10 p-4 rounded-2xl hover:bg-white/10 transition-all hover:-translate-y-1 duration-300">
+                       <h4 class="text-xl font-russo text-orange-400 mb-4 uppercase tracking-wide flex items-center">
                           <svg class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                           Seismic Waves
                        </h4>
                        <ul class="space-y-4 font-chakra">
                           <li class="flex items-start group">
                              <div class="bg-orange-500/20 px-3 py-1 rounded mr-3 text-orange-400 font-bold text-xs w-20 text-center mt-0.5 group-hover:scale-110 transition-transform font-russo tracking-wider group-hover:bg-orange-500/40 group-hover:text-white">P-WAVES</div>
-                             <p class="text-slate-300 text-base">Primary waves. Fastest, compressional motion. Usually felt as a sudden jolt.</p>
+                             <p class="text-slate-300 text-base">Primary Waves - fastest, compressional motion. Usually felt as a sudden jolt.</p>
                           </li>
                           <li class="flex items-start group">
                              <div class="bg-red-500/20 px-3 py-1 rounded mr-3 text-red-400 font-bold text-xs w-20 text-center mt-0.5 group-hover:scale-110 transition-transform font-russo tracking-wider group-hover:bg-red-500/40 group-hover:text-white">S-WAVES</div>
-                             <p class="text-slate-300 text-base">Secondary waves. Slower but stronger side-to-side motion. Causes significant damage.</p>
+                             <p class="text-slate-300 text-base">Secondary Waves - slower but stronger side-to-side motion. Causes significant damage.</p>
                           </li>
                           <li class="flex items-start group">
                              <div class="bg-purple-500/20 px-3 py-1 rounded mr-3 text-purple-400 font-bold text-xs w-20 text-center mt-0.5 group-hover:scale-110 transition-transform font-russo tracking-wider group-hover:bg-purple-500/40 group-hover:text-white">SURFACE</div>
-                             <p class="text-slate-300 text-base">Travel along the Earth's surface. The most destructive rolling motion.</p>
+                             <p class="text-slate-300 text-base">Travel along the Earth's Surface.</p>
                           </li>
                        </ul>
                     </div>
 
-                    <div class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all hover:-translate-y-2 duration-300">
-                       <h4 class="text-2xl font-russo text-orange-400 mb-4 uppercase tracking-wide flex items-center">
+                    <div class="bg-white/5 border border-white/10 p-4 rounded-2xl hover:bg-white/10 transition-all hover:-translate-y-1 duration-300">
+                       <h4 class="text-xl font-russo text-orange-400 mb-4 uppercase tracking-wide flex items-center">
                           <svg class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
                           Intensity Factors
                        </h4>
                        <div class="space-y-6 font-chakra">
                           <div class="group">
                              <div class="flex justify-between text-sm font-bold uppercase mb-2 font-russo">
-                                <span class="text-slate-400">Magnitude</span>
+                                <span class="text-slate-300">Magnitude</span>
                                 <span class="text-orange-500 group-hover:scale-110 transition-transform origin-right">Energy Released</span>
                              </div>
                              <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden"><div class="bg-orange-500 h-full w-3/4 shadow-[0_0_10px_orange]"></div></div>
-                             <p class="text-slate-500 text-xs mt-1.5">The total amount of energy released at the source.</p>
+                             <p class="text-slate-300 text-xs mt-1.5">The total amount of energy released at the source.</p>
                           </div>
                           <div class="group">
                              <div class="flex justify-between text-sm font-bold uppercase mb-2 font-russo">
-                                <span class="text-slate-400">Distance</span>
+                                <span class="text-slate-300">Distance</span>
                                 <span class="text-orange-500 group-hover:scale-110 transition-transform origin-right">Proximity</span>
                              </div>
                              <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden"><div class="bg-orange-500 h-full w-1/2 shadow-[0_0_10px_orange]"></div></div>
-                             <p class="text-slate-500 text-xs mt-1.5">Closer to the epicenter = Stronger shaking.</p>
-                          </div>
-                          <div class="group">
-                             <div class="flex justify-between text-sm font-bold uppercase mb-2 font-russo">
-                                <span class="text-slate-400">Soil Type</span>
-                                <span class="text-red-500 animate-pulse group-hover:scale-110 transition-transform origin-right">Critical Risk</span>
-                             </div>
-                             <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden"><div class="bg-red-500 h-full w-full shadow-[0_0_10px_red]"></div></div>
-                             <p class="text-slate-500 text-xs mt-1.5">Soft soil amplifies shaking and liquefaction risk.</p>
+                             <p class="text-slate-300 text-xs mt-1.5">Closer to the epicenter = Stronger shaking.</p>
                           </div>
                        </div>
                     </div>
@@ -316,11 +307,11 @@ export const LECTURES: Lecture[] = [
               Effects Analysis
             </h3>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 items-stretch h-[60vh]">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 items-stretch h-[40vh]">
               <!-- Card 1: Structural Damage -->
               <div class="group relative bg-black/40 border-2 border-white/10 rounded-3xl overflow-hidden hover:border-orange-500 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_0_50px_rgba(249,115,22,0.4)] flex flex-col justify-end p-8 cursor-pointer">
                  <div class="absolute inset-0">
-                    <img src="https://i.imgur.com/P2c24Fz.jpeg" alt="Structural Damage" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700 group-hover:opacity-80 group-hover:rotate-1" />
+                    <img src="earthquake-hazards/pBXuXnF.jpeg" alt="Structural Damage" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700 group-hover:opacity-80 group-hover:rotate-1" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
                  </div>
                  
@@ -340,7 +331,7 @@ export const LECTURES: Lecture[] = [
               <!-- Card 2: Infrastructure Disruption -->
               <div class="group relative bg-black/40 border-2 border-white/10 rounded-3xl overflow-hidden hover:border-red-500 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_0_50px_rgba(239,68,68,0.4)] flex flex-col justify-end p-8 cursor-pointer">
                  <div class="absolute inset-0">
-                    <img src="https://i.imgur.com/pBXuXnF.jpeg" alt="Infrastructure Disruption" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700 group-hover:opacity-80 group-hover:-rotate-1" />
+                    <img src="earthquake-hazards/P2c24Fz.jpeg" alt="Infrastructure Disruption" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700 group-hover:opacity-80 group-hover:-rotate-1" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
                  </div>
                  
@@ -360,7 +351,7 @@ export const LECTURES: Lecture[] = [
               <!-- Card 3: Psychological Stress -->
               <div class="group relative bg-black/40 border-2 border-white/10 rounded-3xl overflow-hidden hover:border-purple-500 transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_0_50px_rgba(168,85,247,0.4)] flex flex-col justify-end p-8 cursor-pointer">
                  <div class="absolute inset-0">
-                    <img src="https://i.imgur.com/nieyw10.jpeg" alt="Psychological Stress" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700 group-hover:opacity-80 grayscale group-hover:grayscale-0" />
+                    <img src="earthquake-hazards/nieyw10.jpeg" alt="Psychological Stress" class="w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700 group-hover:opacity-80 grayscale group-hover:grayscale-0" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
                  </div>
                  
@@ -384,11 +375,11 @@ export const LECTURES: Lecture[] = [
             id: 'ground-rupture',
             title: 'Ground Rupture',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                <div class="space-y-6">
+             <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
                     <div>
                         <h3 class="text-4xl md:text-5xl font-russo font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 uppercase leading-none mb-4 transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Ground Rupture</h3>
                         <p class="text-xl md:text-2xl text-slate-300 font-chakra font-light leading-relaxed">
@@ -407,17 +398,17 @@ export const LECTURES: Lecture[] = [
                        </div>
                     </div>
 
-                    <div class="bg-white/5 border-l-4 border-orange-500 p-5 rounded-r-3xl hover:bg-white/10 transition-colors duration-300 shadow-md">
+                    <div class="bg-white/5 border-l-4 border-orange-500 p-3 rounded-r-3xl hover:bg-white/10 transition-colors duration-300 shadow-md">
                         <h4 class="text-lg font-bold text-orange-400 mb-3 uppercase tracking-wide flex items-center font-russo">
                            <span class="w-3 h-3 bg-orange-500 rounded-sm mr-3 animate-spin"></span>
                            Effects Analysis
                         </h4>
                         <ul class="space-y-3 text-slate-200 text-base font-chakra">
-                          <li class="flex items-start p-2 rounded-lg hover:bg-orange-500/20 transition-all duration-300 hover:translate-x-2 cursor-default">
+                          <li class="flex items-start p-1 rounded-lg hover:bg-orange-500/20 transition-all duration-300 hover:translate-x-2 cursor-default">
                              <span class="text-red-500 mr-3 mt-1 font-bold">►</span>
                              <span><strong>Structural Tearing:</strong> Foundations split apart instantly.</span>
                           </li>
-                          <li class="flex items-start p-2 rounded-lg hover:bg-orange-500/20 transition-all duration-300 hover:translate-x-2 cursor-default">
+                          <li class="flex items-start p-1 rounded-lg hover:bg-orange-500/20 transition-all duration-300 hover:translate-x-2 cursor-default">
                              <span class="text-red-500 mr-3 mt-1 font-bold">►</span>
                              <span><strong>Uninhabitable Zones:</strong> Permanent no-build zones.</span>
                           </li>
@@ -438,11 +429,11 @@ export const LECTURES: Lecture[] = [
                 </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-3xl bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-auto lg:h-5/6 relative overflow-hidden rounded-3xl bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                 <div class="space-y-6 px-4 py-6">
                    <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-orange-500/30">
                       <div class="h-48 overflow-hidden relative">
-                         <img src="https://i.imgur.com/mz2zqMV.jpeg" alt="Bohol Rupture" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                         <img src="earthquake-hazards/mz2zqMV.jpeg" alt="Bohol Rupture" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                          <a href="https://afe-adb.org/sites/default/files/Earthquake%20Risk%20and%20Preparedness%20Presentation%20ADB%2028May2013.pdf" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-orange-500" title="View Source">
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                          </a>
@@ -453,7 +444,7 @@ export const LECTURES: Lecture[] = [
                    </div>
                    <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-orange-500/30">
                       <div class="h-48 overflow-hidden relative">
-                         <img src="https://i.imgur.com/nSEuU4D.jpeg" alt="Cotabato Rupture" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                         <img src="earthquake-hazards/nSEuU4D.jpeg" alt="Cotabato Rupture" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                          <a href="https://www.youtube.com/watch?v=tSeflXdLrJE" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-orange-500" title="View Source">
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                          </a>
@@ -464,18 +455,7 @@ export const LECTURES: Lecture[] = [
                    </div>
                    <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-orange-500/30">
                       <div class="h-48 overflow-hidden relative">
-                         <img src="https://i.imgur.com/MkMEKQH.jpeg" alt="Surigao Cracks" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
-                         <a href="https://temblor.net/earthquake-insights/fault-that-caused-a-july-quake-in-the-philippines-still-in-question-14355/" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-orange-500" title="View Source">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
-                         </a>
-                      </div>
-                      <div class="p-4">
-                         <p class="text-base text-slate-200 font-bold mb-1 font-chakra">Cracks in the road caused by ground rupture in Surigao during the 2017 earthquake.</p>
-                      </div>
-                   </div>
-                   <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-orange-500/30">
-                      <div class="h-48 overflow-hidden relative">
-                         <img src="https://i.imgur.com/lgVgC4n.jpeg" alt="Negros Fissure" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                         <img src="earthquake-hazards/lgVgC4n.jpeg" alt="Negros Fissure" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                          <a href="https://rpnradio.com/davao-multiple-ground-rupture-naranasan-sa-kalsada-ng-purok-silad-sa-barangay-macambol-mati/" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-orange-500" title="View Source">
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                          </a>
@@ -493,13 +473,13 @@ export const LECTURES: Lecture[] = [
             id: 'liquefaction',
             title: 'Liquefaction',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                <div class="space-y-6">
-                    <h3 class="text-4xl md:text-5xl font-russo font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-blue-500 mb-6 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Liquefaction</h3>
-                    <p class="text-2xl md:text-3xl text-slate-300 mb-8 font-light font-chakra">
+             <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                    <h3 class="text-4xl md:text-5xl font-russo font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-blue-500 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Liquefaction</h3>
+                    <p class="text-xl md:text-2xl text-slate-300 mb-8 font-light font-chakra">
                       The process where water-saturated, loose soil behaves like a liquid during intense shaking.
                     </p>
 
@@ -519,11 +499,11 @@ export const LECTURES: Lecture[] = [
                     </div>
                     
                     <div class="space-y-6">
-                      <div class="bg-cyan-950/30 border border-cyan-500/20 p-6 rounded-2xl group hover:border-cyan-500/40 transition-all hover:bg-cyan-900/30 hover:shadow-lg">
+                      <div class="bg-cyan-950/30 border border-cyan-500/20 p-3 rounded-2xl group hover:border-cyan-500/40 transition-all hover:bg-cyan-900/30 hover:shadow-lg">
                         <h4 class="text-xl font-bold text-cyan-400 mb-2 uppercase tracking-wide group-hover:text-cyan-300 font-russo">Critical Impacts</h4>
                         <ul class="space-y-3 text-slate-300 text-lg font-chakra">
-                          <li class="flex items-start p-2 rounded hover:bg-white/5 transition-all hover:translate-x-2 cursor-default"><span class="text-cyan-500 mr-2 font-bold">►</span> Building Instability: Structures sink or tilt.</li>
-                          <li class="flex items-start p-2 rounded hover:bg-white/5 transition-all hover:translate-x-2 cursor-default"><span class="text-cyan-500 mr-2 font-bold">►</span> Underground Damage: Pipes burst due to soil movement.</li>
+                          <li class="flex items-start p-1 rounded hover:bg-white/5 transition-all hover:translate-x-2 cursor-default"><span class="text-cyan-500 mr-2 font-bold">►</span> Building Instability: Structures sink or tilt.</li>
+                          <li class="flex items-start p-1 rounded hover:bg-white/5 transition-all hover:translate-x-2 cursor-default"><span class="text-cyan-500 mr-2 font-bold">►</span> Underground Damage: Pipes burst due to soil movement.</li>
                         </ul>
                       </div>
                     </div>
@@ -542,11 +522,11 @@ export const LECTURES: Lecture[] = [
                 </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-3xl bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-auto lg:h-5/6 relative overflow-hidden rounded-3xl bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                 <div class="space-y-6 px-4 py-6">
                    <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-500/30">
                       <div class="h-48 overflow-hidden relative">
-                         <img src="https://i.imgur.com/ejDazPW.jpeg" alt="Dagupan Liquefaction" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                         <img src="earthquake-hazards/ejDazPW.jpeg" alt="Dagupan Liquefaction" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                          <a href="https://www.nzsee.org.nz/db/2011/043.pdf" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                          </a>
@@ -557,24 +537,13 @@ export const LECTURES: Lecture[] = [
                    </div>
                    <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-500/30">
                       <div class="h-48 overflow-hidden relative">
-                         <img src="https://i.imgur.com/XkdS1Sh.jpeg" alt="Sand Boils" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                         <img src="earthquake-hazards/XkdS1Sh.jpeg" alt="Sand Boils" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                          <a href="https://www.researchgate.net/figure/Documented-liquefaction-after-the-2022-Mw-70-Northwestern-Luzon-Earthquake-A-An_fig8_368335398" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                          </a>
                       </div>
                       <div class="p-4">
                          <p class="text-base text-slate-200 font-bold mb-1 font-chakra">Evidence of liquefaction in the form of sand boils erupting from the ground in Pampanga.</p>
-                      </div>
-                   </div>
-                   <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-500/30">
-                      <div class="h-48 overflow-hidden relative">
-                         <img src="https://i.imgur.com/m7ErQuv.jpeg" alt="Road Cracks" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
-                         <a href="https://www.youtube.com/watch?v=-kqCBSEI4QE" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
-                         </a>
-                      </div>
-                      <div class="p-4">
-                         <p class="text-base text-slate-200 font-bold mb-1 font-chakra">A road cracked and displaced by liquefaction effects during a major earthquake.</p>
                       </div>
                    </div>
                 </div>
@@ -586,14 +555,14 @@ export const LECTURES: Lecture[] = [
             id: 'landslides',
             title: 'Landslides',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                 <div class="space-y-8">
+             <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
                     <div>
                        <h3 class="text-4xl md:text-5xl font-russo font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-stone-500 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Landslides</h3>
-                       <p class="text-2xl md:text-3xl text-slate-300 font-light leading-relaxed font-chakra">
+                       <p class="text-xl md:text-2xl text-slate-300 font-light leading-relaxed font-chakra">
                           Downhill movement of rocks and soil triggered by <span class="text-emerald-400 font-bold">ground shaking</span>, especially in mountainous terrains.
                        </p>
                     </div>
@@ -633,11 +602,11 @@ export const LECTURES: Lecture[] = [
                  </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-3xl bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-auto lg:h-5/6 relative overflow-hidden rounded-3xl bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-emerald-500/30">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://imgs.mongabay.com/wp-content/uploads/sites/20/2024/02/21135449/landslide-philippines.jpg" alt="Maco Landslide" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <img src="earthquake-hazards/2lNocmC.jpeg" alt="Maco Landslide" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                            <a href="https://news.mongabay.com/2024/02/landslide-in-philippines-mining-town-kills-nearly-100-prompts-calls-for-action/" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-emerald-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
@@ -648,7 +617,7 @@ export const LECTURES: Lecture[] = [
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-emerald-500/30">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://floodlist.com/wp-content/uploads/2022/10/Landslide-Philippines-Civil-Defense-Northern-Mindanao-Region-10-1536x1152.jpg" alt="Naga City Landslide" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <img src="earthquake-hazards/cU3ltee.jpeg" alt="Naga City Landslide" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                            <a href="https://floodlist.com/asia/philippines-northern-mindanao-october-2022" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-emerald-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
@@ -659,7 +628,7 @@ export const LECTURES: Lecture[] = [
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-emerald-500/30">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://imgs.mongabay.com/wp-content/uploads/sites/20/2024/02/21140213/landslide-philippines-2.jpg" alt="Itogon Landslide" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <img src="earthquake-hazards/rco3Z7S.jpeg" alt="Itogon Landslide" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                            <a href="https://news.mongabay.com/2024/02/landslide-in-philippines-mining-town-kills-nearly-100-prompts-calls-for-action/" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-emerald-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
@@ -670,7 +639,7 @@ export const LECTURES: Lecture[] = [
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-emerald-500/30">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://blogs.agu.org/landslideblog/files/2022/07/22_07-Philippines-2.jpg" alt="Guinsaugon Landslide" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <img src="earthquake-hazards/G7bkEeA.jpeg" alt="Guinsaugon Landslide" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                            <a href="https://blogs.agu.org/landslideblog/2022/07/28/abra-earthquake-1/" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-emerald-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
@@ -681,7 +650,7 @@ export const LECTURES: Lecture[] = [
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-emerald-500/30">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://files01.pna.gov.ph/category-list/2021/05/19/lslide-gsc.jpg" alt="Baybay City Landslide" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <img src="earthquake-hazards/1iMpqkq.jpeg" alt="Baybay City Landslide" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                            <a href="https://www.pna.gov.ph/articles/1140765" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-emerald-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
@@ -752,18 +721,18 @@ export const LECTURES: Lecture[] = [
                          </a>
                       </div>
                       <div class="p-4">
-                         <p class="text-base text-slate-200 font-bold mb-1 font-chakra">Wreckage of houses and boats washed ashore after a tsunami event.</p>
+                         <p class="text-base text-slate-200 font-bold mb-1 font-chakra">Wreckage of houses washed ashore during a tsunami event.</p>
                       </div>
                    </div>
                    <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-blue-500/30">
                       <div class="h-56 overflow-hidden relative">
-                         <img src="https://i.imgur.com/Vs1VkOm.jpeg" alt="Evacuation Drill" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                         <img src="earthquake-hazards/zPDFeDmtdDJDkudQBsmD.webp" alt="Evacuation Drill" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                          <a href="https://reopen.media/en-gb/articles/7-4-magnitude-earthquake-hits-philippines-tsunami-warning" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-blue-500" title="View Source">
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                          </a>
                       </div>
                       <div class="p-4">
-                         <p class="text-base text-slate-200 font-bold mb-1 font-chakra">Residents participating in a community evacuation drill.</p>
+                         <p class="text-base text-slate-200 font-bold mb-1 font-chakra">Quake Hits Philippines, Tsunami Warning Issued.</p>
                       </div>
                    </div>
                 </div>
@@ -977,7 +946,7 @@ export const LECTURES: Lecture[] = [
       title: 'Hydrometeorological Hazards',
       description: 'Learn about hazards caused by atmospheric, hydrological, or oceanographic processes like cyclones, floods, and droughts.',
       topic: 'Flood',
-      imageUrl: 'https://i.imgur.com/mL67Bpp.jpeg',
+      imageUrl: '83465e25-4967-4630-bf67-bcbc9efe0e90.jpg',
       readTime: 12,
       difficulty: 'Beginner',
       objectives: [
@@ -1685,7 +1654,7 @@ export const LECTURES: Lecture[] = [
       title: 'Volcano-Related Hazards',
       description: 'Understand volcanic eruptions, ash fall, lahars, and pyroclastic flows.',
       topic: 'Volcano',
-      imageUrl: 'https://i.imgur.com/eQVYVP2.jpeg',
+      imageUrl: 'cfdc22bb-2d99-4f5c-9705-2d2e998726f3.jpg',
       readTime: 15,
       difficulty: 'Advanced',
       objectives: [
