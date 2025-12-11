@@ -77,14 +77,20 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
   const [showStartMenu, setShowStartMenu] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
-  const [zoomLevel, setZoomLevel] = useState(1.5);
+  const [zoomLevel, setZoomLevel] = useState(() => {
+    // initialize zoom level based on screen size for mobile users
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 1024 ? 0.7 : 1.5; // 0.7 for mobile/tablet, 1.5 for desktop
+    }
+    return 1.5;
+  });
   
   const containerRef = useRef<HTMLDivElement>(null);
   const contentScrollRef = useRef<HTMLDivElement>(null);
   const initButtonRef = useRef<HTMLButtonElement>(null);
   const abortButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Auto-scroll logic for Tutorial Step 3 & 4
+  // auto-scroll logic for Tutorial Step 3 & 4
   useEffect(() => {
      if (tutorialStep === 3 && initButtonRef.current) {
         initButtonRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -97,7 +103,7 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
     if (tutorialStep === 3) {
       setTutorialStep(4);
     } else if (tutorialStep === 4) {
-      // Complete
+      // complete
       localStorage.setItem('haip_onboarding_complete', 'true');
       setTutorialStep(null);
     }
@@ -109,7 +115,8 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
   };
 
   const resetZoom = () => {
-    setZoomLevel(1.5);
+    const defaultZoom = typeof window !== 'undefined' && window.innerWidth < 1024 ? 0.7 : 1.5;
+    setZoomLevel(defaultZoom);
   };
 
   // Construct Virtual Slides Array
@@ -544,13 +551,13 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
                     <ZoomIn className="w-4 h-4 text-slate-300 mr-2" />
                     <input 
                       type="range" 
-                      min="0.8" 
+                      min="0.5" 
                       max="1.5" 
                       step="0.1" 
                       value={zoomLevel} 
                       onChange={(e) => setZoomLevel(parseFloat(e.target.value))}
                       className="w-24 h-1.5 bg-slate-600 rounded-lg appearance-none cursor-pointer accent-white"
-                      title="Zoom Content"
+                      title="Zoom Content (0.5x - 1.5x)"
                     />
                  </div>
               </div>
@@ -576,7 +583,7 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
         </div>
 
         <div 
-           className="flex-1 overflow-y-hidden w-full mx-auto p-4 sm:p-6 lg:p-8 custom-scrollbar px-8 lg:px-12 relative z-10"
+           className="flex-1 overflow-y-auto lg:overflow-y-hidden w-full mx-auto p-4 sm:p-6 lg:p-8 custom-scrollbar px-8 lg:px-12 relative z-10"
            ref={contentScrollRef}
            onClick={handleContentClick}
         >
@@ -586,7 +593,7 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
                   {/* Left Column Container - Explicitly defined to handle Flex distribution */}
                   <div className="flex flex-col gap-6 lg:h-full h-auto lg:overflow-hidden order-1 min-w-0">
                       {/* Objectives Section - Flex 1 to take remaining space, min-h-0 to allow scrolling inside */}
-                      <div className="bg-black/10 border border-white/10 rounded-3xl p-6 sm:p-6 backdrop-blur-sm flex-1 overflow-y-auto min-h-0">
+                      <div className="bg-black/10 border border-white/10 rounded-3xl p-6 sm:p-6 backdrop-blur-sm lg:flex-1 lg:min-h-0 overflow-y-auto max-h-96 lg:max-h-none">
                           <h2 className={`text-2xl sm:text-3xl font-black uppercase mb-6 ${theme.accentColor} tracking-tight`}>
                              {activeSlide.title}
                           </h2>
@@ -597,7 +604,7 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
                       </div>
 
                       {/* Game Section - Flex 1 to split evenly with Objectives */}
-                      <div className="bg-black/20 border border-white/10 rounded-3xl p-4 sm:p-6 backdrop-blur-sm relative overflow-hidden flex flex-col flex-1 min-h-0">
+                      <div className="bg-black/20 border border-white/10 rounded-3xl p-4 sm:p-6 backdrop-blur-sm relative overflow-hidden flex flex-col lg:flex-1 lg:min-h-0 max-h-96 lg:max-h-none">
                           <div className="flex items-center justify-between mb-4 z-10 flex-none">
                             <h3 className="text-xl font-bold text-white flex items-center">
                                <Gamepad2 className={`w-5 h-5 mr-2 ${theme.accentColor}`} />
@@ -628,13 +635,13 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
                    <DecisionGame scenarios={activeSlide.data} topic={lecture.topic} />
                 </div>
             ) : activeSlide.type === 'final-quiz' ? (
-               <div className="w-full h-full flex flex-col items-center justify-start max-w-5xl mx-auto pb-20">
+               <div className="w-full lg:h-full h-auto flex flex-col items-center justify-start max-w-5xl mx-auto overflow-y-auto custom-scrollbar pb-20 lg:pb-0">
                    <div className="w-full">
                       <QuizComponent questions={activeSlide.data} title="Test Your Knowledge" mode="form" />
                    </div>
                </div>
             ) : (
-               <div className="flex flex-col h-full">
+               <div className="flex flex-col lg:h-full h-auto">
                   <div className="flex items-center space-x-3 opacity-60">
                      <div className={`w-2 h-2 rounded-full ${theme.buttonBg}`}></div>
                      <span className="text-xs font-mono uppercase tracking-widest text-slate-300">
@@ -643,7 +650,7 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
                   </div>
 
                   <div 
-                    className="prose prose-invert prose-xl md:prose-2xl max-w-none w-full flex-1"
+                    className="prose prose-invert prose-xl md:prose-2xl max-w-none w-full lg:flex-1"
                     dangerouslySetInnerHTML={{ __html: activeSlide.data.content }}
                   />
                </div>

@@ -84,7 +84,7 @@ export const QuizComponent: React.FC<QuizProps> = ({ questions, title = "Refresh
   // --- RENDER FORM MODE (Google Forms Style) ---
   if (mode === 'form') {
     return (
-      <div className="w-full max-w-4xl mx-auto space-y-6 pb-20">
+      <div className="w-full max-w-4xl mx-auto space-y-6">
         <div className="bg-black/40 backdrop-blur-xl border border-white/10 p-8 rounded-3xl text-center shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
           <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-2">{title}</h2>

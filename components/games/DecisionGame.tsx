@@ -74,7 +74,7 @@ export const DecisionGame: React.FC<DecisionGameProps> = ({ scenarios, topic }) 
     }
 
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center max-w-6xl mx-auto">
+        <div className="w-full h-full flex flex-col items-center justify-center max-w-6xl mx-auto overflow-x-hidden">
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
                 {/* Left Col: Scenario Description */}
