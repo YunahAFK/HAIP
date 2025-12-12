@@ -67,7 +67,7 @@ export const DecisionGame: React.FC<DecisionGameProps> = ({ scenarios, topic }) 
                     onClick={resetGame}
                     className={`px-8 py-3 rounded-xl font-bold uppercase tracking-widest text-white transition-all shadow-lg hover:scale-105 flex items-center ${theme.bg} hover:brightness-110`}
                 >
-                    <RefreshCw className="w-5 h-5 mr-2" /> Restart Simulation
+                    <RefreshCw className="w-5 h-5 mr-2" /> Restart Decision Game
                 </button>
             </div>
         );

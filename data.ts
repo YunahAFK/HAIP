@@ -744,7 +744,7 @@ export const LECTURES: Lecture[] = [
             id: 'fire-refs',
             title: 'Fire & Infra',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-32 0px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
              <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
@@ -1011,7 +1011,7 @@ export const LECTURES: Lecture[] = [
             content: `
           <div class="flex flex-col items-center justify-center min-h-full py-10">
             <div class="bg-cyan-950/40 border-4 border-cyan-500/20 p-8 rounded-[3rem] max-w-4xl w-full text-center backdrop-blur-md shadow-2xl hover:scale-105 transition-transform duration-700">
-               <h3 class="text-4xl md:text-6xl font-fredoka font-black text-cyan-400 mb-8 uppercase tracking-wide drop-shadow-lg">Hydrometeorological Hazards</h3>
+               <h3 class="text-2xl md:text-4xl font-fredoka font-black text-cyan-400 mb-8 uppercase tracking-wide drop-shadow-lg">Hydrometeorological Hazards</h3>
                <p class="text-xl text-slate-200 leading-relaxed mb-8 font-quicksand font-medium">
                  Natural events caused by atmospheric, hydrological, or oceanographic processes. These include <span class="text-white font-bold bg-cyan-600 px-2 py-1 rounded-lg">tropical cyclones, floods, storm surges, droughts, and monsoons</span>.
                </p>
@@ -1030,11 +1030,11 @@ export const LECTURES: Lecture[] = [
             id: 'cyclone-natural',
             title: 'Tropical Cyclone (Natural)',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                <div class="space-y-8">
+             <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
                     <div>
                         <h3 class="text-4xl md:text-5xl font-fredoka font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500 mb-6 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Signs of an Impending Tropical Cyclone</h3>
                         <p class="text-2xl text-slate-300 font-quicksand font-bold mb-6">
@@ -1053,12 +1053,12 @@ export const LECTURES: Lecture[] = [
                 </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-auto lg:h-5/6 relative overflow-hidden rounded-3xl bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-blue-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://i.imgur.com/99KgPHB.jpeg" alt="Dark Clouds" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
-                           <a href="https://i.imgur.com/99KgPHB.jpeg" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-blue-500" title="View Source">
+                           <img src="hydrometeorological-hazards/99KgPHB.jpeg" alt="Dark Clouds" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <a href="https://www.pexels.com/photo/road-under-cloudy-sky-416920/" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-blue-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
                         </div>
@@ -1068,8 +1068,8 @@ export const LECTURES: Lecture[] = [
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-blue-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://i.imgur.com/XAnicgM.jpeg" alt="Strong Winds" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
-                           <a href="https://i.imgur.com/XAnicgM.jpeg" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-blue-500" title="View Source">
+                           <img src="hydrometeorological-hazards/XAnicgM.jpeg" alt="Strong Winds" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <a href=" " target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-blue-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
                         </div>
@@ -1079,8 +1079,8 @@ export const LECTURES: Lecture[] = [
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-blue-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://i.imgur.com/9PCvmNU.jpeg" alt="Heavy Rain" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
-                           <a href="https://i.imgur.com/9PCvmNU.jpeg" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-blue-500" title="View Source">
+                           <img src="hydrometeorological-hazards/9PCvmNU.jpeg" alt="Heavy Rain" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <a href=" " target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-blue-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
                         </div>
@@ -1097,11 +1097,11 @@ export const LECTURES: Lecture[] = [
             id: 'cyclone-scientific',
             title: 'Tropical Cyclone (Scientific)',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                <div class="space-y-8">
+             <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
                     <div>
                         <h3 class="text-4xl md:text-5xl font-fredoka font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500 mb-6 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Signs of an Impending Tropical Cyclone</h3>
                         <p class="text-2xl text-slate-300 font-quicksand font-bold mb-6">
@@ -1109,39 +1109,27 @@ export const LECTURES: Lecture[] = [
                         </p>
                     </div>
 
-                    <div class="bg-cyan-900/30 p-6 rounded-[2.5rem] border-2 border-cyan-500/30 hover:bg-cyan-900/50 transition-all duration-300 hover:scale-[1.02] group cursor-pointer hover:border-cyan-400">
-                        <ul class="space-y-3 text-lg text-cyan-100 font-quicksand font-bold">
+                    <div class="bg-cyan-900/30 p-4 rounded-[2.5rem] border-2 border-cyan-500/30 hover:bg-cyan-900/50 transition-all duration-300 hover:scale-[1.02] group cursor-pointer hover:border-cyan-400">
+                        <ul class="space-y-3 text-sm text-cyan-100 font-quicksand font-bold">
                            <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">📡</span> PAGASA satellite images showing a spiraling cloud pattern over the Pacific</li>
                            <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">📢</span> Weather bulletins announcing tropical depression or storm formation</li>
                            <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">⚠️</span> Warning signals (Signal Nos. 1–5) issued for affected areas</li>
                         </ul>
                     </div>
                     
-                    <div class="mt-8 pt-6 border-t-2 border-cyan-500/30 text-cyan-200">
+                    <div class="mt-8 pt-4 text-cyan-200">
                         <p class="font-fredoka text-2xl font-bold mb-2 uppercase">Example Scenario</p>
                         <p class="text-lg opacity-90 font-quicksand font-medium">Before Typhoon Yolanda (2013) made landfall, PAGASA recorded a drastic pressure drop and spiral cloud formation detected via satellite.</p>
                         <div class="text-sm font-bold text-cyan-500 mt-2 uppercase tracking-widest font-fredoka">Reference: PAGASA (2023), Tropical Cyclone Monitoring Manual.</div>
                     </div>
-
-                    <div class="bg-blue-950/40 border border-blue-500/30 p-5 rounded-2xl flex items-start mt-auto hover:bg-blue-900/40 transition-colors duration-500 group hover:shadow-lg hover:shadow-blue-900/50">
-                        <div class="mr-4 mt-1 bg-blue-500/20 p-2 rounded-lg flex-shrink-0 group-hover:scale-125 transition-transform duration-300">
-                             <svg class="w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                        </div>
-                        <div>
-                             <h4 class="text-blue-300 font-bold uppercase text-base mb-1 group-hover:text-white font-fredoka tracking-wide">Safety Protocol: Monitor</h4>
-                             <p class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200 font-quicksand">
-                                Always tune in to official PAGASA updates. Secure loose items outside and prepare an emergency kit if Signal No. 1 is raised.
-                             </p>
-                        </div>
-                    </div>
                 </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-auto lg:h-5/6 relative overflow-hidden rounded-3xl bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://wmo.int/sites/default/files/styles/featured_image_x2_1536x1024_/public/2025-02/thumbnails_4.jpg?h=d1cb525d&itok=cMWQEoCZ" alt="Satellite Image" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <img src="hydrometeorological-hazards/ZiB3xRN.jpeg" alt="Satellite Image" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                            <a href="https://wmo.int/media/news-from-members/dost-pagasa-hosts-annual-session-of-escap-wmo-typhoon-committee-2025" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
@@ -1152,7 +1140,7 @@ export const LECTURES: Lecture[] = [
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://pia.gov.ph/uploads/2022/10/e465ff4333f5454e912c1217c0855cfa.jpg" alt="Wind Signals" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <img src="hydrometeorological-hazards/y6Mmnbh.jpeg" alt="Wind Signals" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                            <a href="https://mirror.pia.gov.ph/infographics/2022/10/29/tropical-cyclone-wind-signal" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
@@ -1163,7 +1151,7 @@ export const LECTURES: Lecture[] = [
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://pia.gov.ph/uploads/2022/10/0be87521a26c8edae014b2477cd9dc40.jpg" alt="Wind Signals Info" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <img src="hydrometeorological-hazards/MelO1Pr.jpeg" alt="Wind Signals Info" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                            <a href="https://mirror.pia.gov.ph/infographics/2022/10/29/tropical-cyclone-wind-signal" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
@@ -1181,65 +1169,62 @@ export const LECTURES: Lecture[] = [
             id: 'flood-natural',
             title: 'Flood (Natural)',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                <h3 class="text-4xl font-fredoka font-black text-white mb-2 uppercase drop-shadow-md">Signs of an Impending Flood</h3>
-                <h4 class="text-xl font-bold text-slate-300 font-quicksand mb-6">Natural Signs</h4>
-                <div class="space-y-6">
-                   <div class="bg-white/5 p-6 rounded-[2rem] border border-white/10 flex items-center hover:bg-white/10 transition-all hover:-translate-y-2 cursor-default group">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">🌧️</span>
-                      <p class="text-xl text-slate-200 font-quicksand font-bold">Continuous heavy rainfall lasts for several hours or days</p>
-                   </div>
-                   <div class="bg-white/5 p-6 rounded-[2rem] border border-white/10 flex items-center hover:bg-white/10 transition-all hover:-translate-y-2 cursor-default group">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">🌊</span>
-                      <p class="text-xl text-slate-200 font-quicksand font-bold">Rising water levels in rivers and creeks</p>
-                   </div>
-                   <div class="bg-white/5 p-6 rounded-[2rem] border border-white/10 flex items-center hover:bg-white/10 transition-all hover:-translate-y-2 cursor-default group">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">🚧</span>
-                      <p class="text-xl text-slate-200 font-quicksand font-bold">Overflowing canals or drainage systems</p>
-                   </div>
-                   <div class="bg-white/5 p-6 rounded-[2rem] border border-white/10 flex items-center hover:bg-white/10 transition-all hover:-translate-y-2 cursor-default group">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">💧</span>
-                      <p class="text-xl text-slate-200 font-quicksand font-bold">Soil softening or water seeping from the ground</p>
-                   </div>
+             <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                    <div>
+                        <h3 class="text-4xl md:text-5xl font-fredoka font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500 mb-6 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Signs of an Impending Flood</h3>
+                        <p class="text-2xl text-slate-300 font-quicksand font-bold mb-6">
+                           Natural Signs                        
+                        </p>
+                    </div>
+
+                    <div class="bg-cyan-900/30 p-4 rounded-[2.5rem] border-2 border-cyan-500/30 hover:bg-cyan-900/50 transition-all duration-300 hover:scale-[1.02] group cursor-pointer hover:border-cyan-400">
+                        <ul class="space-y-3 text-sm text-cyan-100 font-quicksand font-bold">
+                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">🌧️</span> Continuous heavy rainfall lasts for several hours or days</li>
+                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">🌊</span> Rising water levels in rivers and creeks</li>
+                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">🚧</span> Overflowing canals or drainage systems</li>
+                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">💧</span> Soil softening or water seeping from the ground</li>
+                        </ul>
+                    </div>
                 </div>
              </div>
 
-              <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-auto lg:h-5/6 relative overflow-hidden rounded-3xl bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://i.imgur.com/1AxYlwJ.jpeg" alt="Satellite Image" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <img src="hydrometeorological-hazards/1AxYlwJ.jpeg" alt="Satellite Image" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                            <a href="https://www.youtube.com/watch?v=EwNe89zYEgM" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
                         </div>
                         <div class="p-4">
-                           <p class="text-base text-slate-200 font-bold mb-1 font-quicksand">Several motorcyclists seen navigating through a flooded street</p>
+                           <p class="text-base text-slate-200 font-bold mb-1 font-quicksand">PAGASA satellite images showing a spiraling cloud pattern.</p>
                         </div>
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://i.imgur.com/psv8mUn.jpeg" alt="Wind Signals" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <img src="hydrometeorological-hazards/psv8mUn.jpeg" alt="Wind Signals" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                            <a href="https://www.youtube.com/watch?v=A3Zx8wEwhCU" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
                         </div>
                         <div class="p-4">
-                           <p class="text-base text-slate-200 font-bold mb-1 font-quicksand">Flooded city street during a rainstorm.</p>
+                           <p class="text-base text-slate-200 font-bold mb-1 font-quicksand">Scientific forecasting includes issuing Tropical Cyclone Wind Signals.</p>
                         </div>
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://i.imgur.com/XRkStTg.jpeg" alt="Wind Signals Info" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <img src="hydrometeorological-hazards/XRkStTg.jpeg" alt="Wind Signals Info" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
                            <a href="https://www.youtube.com/watch?v=BhgtcMoLGok" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
                         </div>
                         <div class="p-4">
-                           <p class="text-base text-slate-200 font-bold mb-1 font-quicksand">Heavily flooded open space.</p>
+                           <p class="text-base text-slate-200 font-bold mb-1 font-quicksand">Detailed breakdown of wind signals and expected impacts.</p>
                         </div>
                     </div>
                  </div>
@@ -1251,39 +1236,43 @@ export const LECTURES: Lecture[] = [
             id: 'flood-scientific',
             title: 'Flood (Scientific)',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                <h3 class="text-4xl font-fredoka font-black text-cyan-300 mb-2 uppercase drop-shadow-md">Signs of an Impending Flood</h3>
-                <h4 class="text-xl font-bold text-slate-300 font-quicksand mb-6">Scientific Forecasting Signs</h4>
-                <div class="space-y-6">
-                   <div class="bg-cyan-900/30 p-6 rounded-[2rem] border border-cyan-500/30 flex items-center hover:bg-cyan-900/50 transition-all hover:-translate-y-2 cursor-default group">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">📡</span>
-                      <p class="text-xl text-cyan-100 font-quicksand font-bold">PAGASA rainfall radar showing high rainfall intensity (>50mm/hr)</p>
-                   </div>
-                   <div class="bg-cyan-900/30 p-6 rounded-[2rem] border border-cyan-500/30 flex items-center hover:bg-cyan-900/50 transition-all hover:-translate-y-2 cursor-default group">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">🚥</span>
-                      <p class="text-xl text-cyan-100 font-quicksand font-bold">Flood advisories and color-coded warnings (Yellow, Orange, Red Alerts)</p>
-                   </div>
-                </div>
-                
-                <div class="mt-8 pt-6 border-t-2 border-cyan-500/30 text-cyan-200">
-                    <p class="font-fredoka text-2xl font-bold mb-2 uppercase">Example Scenario</p>
-                    <p class="text-lg opacity-90 font-quicksand font-medium">In Marikina, residents monitor the Marikina River water level using PAGASA’s flood monitoring system.</p>
+             <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                    <div>
+                        <h3 class="text-4xl md:text-5xl font-fredoka font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500 mb-6 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Signs of an Impending Flood</h3>
+                        <p class="text-2xl text-slate-300 font-quicksand font-bold mb-6">
+                           Scientific Forecasting Signs
+                        </p>
+                    </div>
+
+                    <div class="bg-cyan-900/30 p-4 rounded-[2.5rem] border-2 border-cyan-500/30 hover:bg-cyan-900/50 transition-all duration-300 hover:scale-[1.02] group cursor-pointer hover:border-cyan-400">
+                        <ul class="space-y-3 text-sm text-cyan-100 font-quicksand font-bold">
+                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">📡</span> PAGASA rainfall radar showing high rainfall intensity (>50mm/hr)</p>
+                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">🚥</span> Flood advisories and color-coded warnings (Yellow, Orange, Red Alerts)</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 text-cyan-200">
+                        <p class="font-fredoka text-2xl font-bold mb-2 uppercase">Example Scenario</p>
+                        <p class="text-lg opacity-90 font-quicksand font-medium">In Marikina, residents monitor the Marikina River water level using PAGASA’s flood monitoring system.</p>
                     <div class="text-sm font-bold text-cyan-500 mt-2 uppercase tracking-widest font-fredoka">Reference: PAGASA (2023), Flood Forecasting and Warning System for River Basins.</div>
+                </div>
                 </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-white border border-white/5 group/scroller flex flex-col shadow-2xl">
+
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-white border border-white/5 group/scroller flex flex-col shadow-2xl">
                  <div class="bg-cyan-950 text-cyan-50 text-xs font-bold uppercase tracking-widest py-3 text-center flex-none flex items-center justify-center gap-2">
                     <span>Source: PAGASA Warning Legends</span>
                     <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                  </div>
-                 <div class="flex-1 w-full bg-white relative">
+                 <div class="flex-1 w-full bg-white relative overflow-hidden">
                       <iframe 
                          src="https://www.pagasa.dost.gov.ph/learnings/legend" 
                          class="absolute inset-0 w-full h-full border-0"
+                         style="zoom: 0.75;"
                          title="PAGASA Warning Legends"
                          loading="lazy"
                          sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
@@ -1297,20 +1286,31 @@ export const LECTURES: Lecture[] = [
             id: 'storm-surge-natural',
             title: 'Storm Surge (Natural)',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                <h3 class="text-4xl md:text-5xl font-fredoka font-black text-indigo-300 mb-2 uppercase drop-shadow-lg">Signs of an Impending Storm Surge</h3>
-                <h4 class="text-xl font-bold text-slate-300 font-quicksand mb-8">Natural Signs</h4>
-                <div class="grid grid-cols-1 gap-6 text-xl text-slate-200 font-quicksand font-bold">
-                   <div class="bg-black/30 p-6 rounded-3xl hover:bg-indigo-600/40 transition-colors duration-300 hover:-translate-y-2 cursor-default border border-indigo-500/20">Unusually calm sea followed by a sudden rise in water level</div>
-                   <div class="bg-black/30 p-6 rounded-3xl hover:bg-indigo-600/40 transition-colors duration-300 hover:-translate-y-2 cursor-default border border-indigo-500/20">Strong winds blowing toward the shore</div>
-                   <div class="bg-black/30 p-6 rounded-3xl hover:bg-indigo-600/40 transition-colors duration-300 hover:-translate-y-2 cursor-default border border-indigo-500/20">Rapidly receding shoreline just before the surge</div>
-                   <div class="bg-black/30 p-6 rounded-3xl hover:bg-indigo-600/40 transition-colors duration-300 hover:-translate-y-2 cursor-default border border-indigo-500/20">Low-pressure readings and dark clouds near the coast</div>
+             <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                    <div>
+                        <h3 class="text-4xl md:text-5xl font-fredoka font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500 mb-6 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Signs of an Impending Storm Surge</h3>
+                        <p class="text-2xl text-slate-300 font-quicksand font-bold mb-6">
+                           Scientific Forecasting Signs
+                        </p>
+                    </div>
+
+                    <div class="bg-cyan-900/30 p-4 rounded-[2.5rem] border-2 border-cyan-500/30 hover:bg-cyan-900/50 transition-all duration-300 hover:scale-[1.02] group cursor-pointer hover:border-cyan-400">
+                        <ul class="space-y-3 text-sm text-cyan-100 font-quicksand font-bold">
+                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">📡</span> PAGASA rainfall radar showing high rainfall intensity (>50mm/hr)</p>
+                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">🚥</span> Flood advisories and color-coded warnings (Yellow, Orange, Red Alerts)</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 text-cyan-200">
+                        <p class="font-fredoka text-2xl font-bold mb-2 uppercase">Example Scenario</p>
+                        <p class="text-lg opacity-90 font-quicksand font-medium">In Marikina, residents monitor the Marikina River water level using PAGASA’s flood monitoring system.</p>
+                    <div class="text-sm font-bold text-cyan-500 mt-2 uppercase tracking-widest font-fredoka">Reference: PAGASA (2023), Flood Forecasting and Warning System for River Basins.</div>
+                </div>
                 </div>
              </div>
-
              <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-400">
@@ -1395,10 +1395,11 @@ export const LECTURES: Lecture[] = [
                     <span>Source: PAGASA Warning Legends</span>
                     <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                  </div>
-                 <div class="flex-1 w-full bg-white relative">
+                 <div class="flex-1 w-full bg-white relative overflow-hidden">
                       <iframe 
                          src="https://www.pagasa.dost.gov.ph/information/about-tropical-cyclone" 
                          class="absolute inset-0 w-full h-full border-0"
+                         style="zoom: 0.75;"
                          title="PAGASA Warning Legends"
                          loading="lazy"
                          sandbox="allow-scripts allow-same-origin allow-popups allow-forms"

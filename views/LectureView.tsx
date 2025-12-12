@@ -76,6 +76,7 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [showStartMenu, setShowStartMenu] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isGameFullscreen, setIsGameFullscreen] = useState(false);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [zoomLevel, setZoomLevel] = useState(() => {
     // initialize zoom level based on screen size for mobile users
@@ -614,8 +615,8 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
                           </div>
                           
                           <div className="flex-1 relative z-10 overflow-y-auto custom-scrollbar">
-                             {lecture.gameType === 'earthquake-sim' && <EarthquakeGame />}
-                             {lecture.gameType === 'flood-choice' && <FloodGame />}
+                             {lecture.gameType === 'earthquake-sim' && <EarthquakeGame onPlayClick={() => setIsGameFullscreen(true)} />}
+                             {lecture.gameType === 'flood-choice' && <FloodGame onPlayClick={() => setIsGameFullscreen(true)} />}
                              {lecture.gameType === 'none' && (
                                <div className="flex items-center justify-center h-full text-slate-400 text-sm italic">
                                  No simulation required for this protocol.
@@ -696,6 +697,44 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
             </button>
           </div>
         </div>
+
+        {/* Fullscreen Game Modal */}
+        {isGameFullscreen && (
+          <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-[999] flex flex-col items-center justify-center p-4 animate-in fade-in duration-300">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsGameFullscreen(false)}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all hover:scale-110 shadow-xl border border-white/20 z-50"
+              title="Close simulation"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Game Content with Iframes */}
+            <div className="w-full h-full max-w-6xl flex flex-col items-center justify-center">
+              {lecture.gameType === 'earthquake-sim' && (
+                <iframe 
+                  src="https://seismic-classroom-3d-earthquake-simulator-626730958040.us-west1.run.app"
+                  className="w-full h-full border-0 rounded-lg"
+                  title="3D Earthquake Simulator"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; xr-spatial-tracking"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              )}
+              {lecture.gameType === 'flood-choice' && (
+                <iframe 
+                  src="https://storm-surge-classroom-flood-simulator-626730958040.us-west1.run.app"
+                  className="w-full h-full border-0 rounded-lg"
+                  title="Storm Surge Simulator"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; xr-spatial-tracking"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              )}
+            </div>
+          </div>
+        )}
     </div>
   );
 };
