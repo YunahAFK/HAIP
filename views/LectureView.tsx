@@ -618,7 +618,7 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
                   <div className="flex-1 relative z-10 overflow-y-auto custom-scrollbar">
                     {lecture.gameType === 'earthquake-sim' && <EarthquakeGame onPlayClick={() => setIsGameFullscreen(true)} />}
                     {lecture.gameType === 'flood-sim' && <FloodGame onPlayClick={() => setIsGameFullscreen(true)} />}
-                    {lecture.gameType === 'volanic-eruption-sim' && <VolcanoGame onPlayClick={() => setIsGameFullscreen(true)} />}
+                    {lecture.gameType === 'volcanic-eruption-sim' && <VolcanoGame onPlayClick={() => setIsGameFullscreen(true)} />}
                     {lecture.gameType === 'none' && (
                       <div className="flex items-center justify-center h-full text-slate-400 text-sm italic">
                         No simulation required for this protocol.
