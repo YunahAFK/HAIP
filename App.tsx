@@ -15,10 +15,10 @@ const App: React.FC = () => {
   const [tutorialStep, setTutorialStep] = useState<number | null>(null);
 
   useEffect(() => {
-    // Check if user has completed onboarding
+    // check if user has completed onboarding
     const hasOnboarded = localStorage.getItem('haip_onboarding_complete');
     if (!hasOnboarded) {
-      // Small delay to allow animations to settle before starting tutorial
+      // small delay to allow animations to settle before starting tutorial
       const timer = setTimeout(() => {
         setTutorialStep(0);
       }, 1000);

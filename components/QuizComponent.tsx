@@ -70,7 +70,7 @@ export const QuizComponent: React.FC<QuizProps> = ({ questions, title = "Refresh
     });
     setFormScore(calculatedScore);
     setFormSubmitted(true);
-    // Scroll to top to see score
+    // scroll to top to see score
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -182,7 +182,7 @@ export const QuizComponent: React.FC<QuizProps> = ({ questions, title = "Refresh
                       })}
                    </div>
                    
-                   {/* Feedback for wrong answer */}
+                   {/* feedback for wrong answer */}
                    {formSubmitted && isWrong && (
                       <div className="mt-4 ml-0 md:ml-12 p-3 bg-red-950/30 border border-red-500/20 rounded-lg flex items-start text-red-200 text-sm">
                          <AlertCircle className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
@@ -215,7 +215,6 @@ export const QuizComponent: React.FC<QuizProps> = ({ questions, title = "Refresh
   }
 
   // --- RENDER WIZARD MODE (Interactive/Card) ---
-  // ... (Existing implementation for Refresher Quiz)
 
   if (showScore) {
     return (

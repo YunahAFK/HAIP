@@ -9,6 +9,7 @@ export const LECTURES: Lecture[] = [
       description: 'A comprehensive guide to primary and secondary earthquake hazards, including ground shaking, liquefaction, and tsunamis.',
       topic: 'Earthquake',
       imageUrl: '/19e4a3c9-78f1-48f6-8d76-327cee5077d3.jpg',
+      bgMusicUrl: '/audio/earthquake-lecture-bgm.mp3',
       readTime: 10,
       difficulty: 'Intermediate',
       objectives: [
@@ -947,6 +948,7 @@ export const LECTURES: Lecture[] = [
       description: 'Learn about hazards caused by atmospheric, hydrological, or oceanographic processes like cyclones, floods, and droughts.',
       topic: 'Flood',
       imageUrl: '83465e25-4967-4630-bf67-bcbc9efe0e90.jpg',
+      bgMusicUrl: '/audio/flood-lecture-bgm.mp3',
       readTime: 12,
       difficulty: 'Beginner',
       objectives: [
@@ -960,6 +962,59 @@ export const LECTURES: Lecture[] = [
          'Disaster Preparedness'
       ],
       gameType: 'flood-sim',
+      decisionGame: [
+         {
+            id: 'dg-tc-1',
+            title: 'storm signal rising',
+            scenario: 'a tropical cyclone warning has been issued and strong winds are already shaking trees near your home, rain is getting heavier by the minute',
+            options: [
+               {
+                  label: 'wait it out and continue normal activities until winds get worse',
+                  isCorrect: false,
+                  feedback: 'dangerous choice, conditions can escalate rapidly during cyclones and waiting too long reduces your time to prepare or evacuate safely'
+               },
+               {
+                  label: 'secure your home and prepare an emergency kit immediately',
+                  isCorrect: true,
+                  feedback: 'correct, early preparation reduces injuries and damage and ensures you are ready if evacuation becomes necessary'
+               }
+            ]
+         },
+         {
+            id: 'dg-tc-2',
+            title: 'flooded streets',
+            scenario: 'during the cyclone, heavy rainfall causes floodwater to rise quickly on the street outside, water is moving fast and debris is floating by',
+            options: [
+               {
+                  label: 'walk through the floodwater to reach a nearby store',
+                  isCorrect: false,
+                  feedback: 'critical mistake, floodwaters can hide open drains, sharp debris, and strong currents that can sweep you away'
+               },
+               {
+                  label: 'stay indoors and move to higher ground if water continues to rise',
+                  isCorrect: true,
+                  feedback: 'correct, avoiding floodwater greatly reduces risk of drowning, injury, and waterborne diseases'
+               }
+            ]
+         },
+         {
+            id: 'dg-tc-3',
+            title: 'the calm eye',
+            scenario: 'the wind suddenly stops and the rain clears, everything becomes eerily calm after hours of violent weather',
+            options: [
+               {
+                  label: 'go outside to check damage and start cleaning up',
+                  isCorrect: false,
+                  feedback: 'incorrect, this may be the eye of the cyclone and dangerous winds can return suddenly from the opposite direction'
+               },
+               {
+                  label: 'remain sheltered and wait for official clearance',
+                  isCorrect: true,
+                  feedback: 'correct, staying sheltered until authorities declare it safe prevents injuries from sudden returning winds'
+               }
+            ]
+         }
+      ],
       sections: [
          {
             id: 'melc',
@@ -1294,29 +1349,24 @@ export const LECTURES: Lecture[] = [
                     <div>
                         <h3 class="text-4xl md:text-5xl font-fredoka font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500 mb-6 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Signs of an Impending Storm Surge</h3>
                         <p class="text-2xl text-slate-300 font-quicksand font-bold mb-6">
-                           Scientific Forecasting Signs
+                           Natural Signs
                         </p>
                     </div>
 
-                    <div class="bg-cyan-900/30 p-4 rounded-[2.5rem] border-2 border-cyan-500/30 hover:bg-cyan-900/50 transition-all duration-300 hover:scale-[1.02] group cursor-pointer hover:border-cyan-400">
-                        <ul class="space-y-3 text-sm text-cyan-100 font-quicksand font-bold">
-                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">📡</span> PAGASA rainfall radar showing high rainfall intensity (>50mm/hr)</p>
-                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">🚥</span> Flood advisories and color-coded warnings (Yellow, Orange, Red Alerts)</li>
-                        </ul>
-                    </div>
-                    <div class="mt-8 pt-6 text-cyan-200">
-                        <p class="font-fredoka text-2xl font-bold mb-2 uppercase">Example Scenario</p>
-                        <p class="text-lg opacity-90 font-quicksand font-medium">In Marikina, residents monitor the Marikina River water level using PAGASA’s flood monitoring system.</p>
-                    <div class="text-sm font-bold text-cyan-500 mt-2 uppercase tracking-widest font-fredoka">Reference: PAGASA (2023), Flood Forecasting and Warning System for River Basins.</div>
-                </div>
+                    <div class="grid grid-cols-1 gap-4 text-lg text-slate-200 font-quicksand font-bold">
+                        <div class="bg-black/30 p-6 rounded-3xl hover:bg-indigo-600/40 transition-colors duration-300 hover:-translate-y-2 cursor-default border border-indigo-500/20">Unusually calm sea followed by a sudden rise in water level</div>
+                        <div class="bg-black/30 p-6 rounded-3xl hover:bg-indigo-600/40 transition-colors duration-300 hover:-translate-y-2 cursor-default border border-indigo-500/20">Strong winds blowing toward the shore</div>
+                        <div class="bg-black/30 p-6 rounded-3xl hover:bg-indigo-600/40 transition-colors duration-300 hover:-translate-y-2 cursor-default border border-indigo-500/20">Rapidly receding shoreline just before the surge</div>
+                        <div class="bg-black/30 p-6 rounded-3xl hover:bg-indigo-600/40 transition-colors duration-300 hover:-translate-y-2 cursor-default border border-indigo-500/20">Low-pressure readings and dark clouds near the coast</div>
+                     </div>
                 </div>
              </div>
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://i.imgur.com/n0gaLzx.jpeg" alt="Satellite Image" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
-                           <a href="https://i.imgur.com/n0gaLzx.jpeg" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
+                           <img src="hydrometeorological-hazards/n0gaLzx.jpeg" alt="Satellite Image" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <a href=" " target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
                         </div>
@@ -1326,8 +1376,8 @@ export const LECTURES: Lecture[] = [
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://i.imgur.com/iXMV7o2.jpeg" alt="Wind Signals" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
-                           <a href="https://i.imgur.com/iXMV7o2.jpeg" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
+                           <img src="/hydrometeorological-hazards/iXMV7o2.jpeg" alt="Wind Signals" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <a href=" " target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
                         </div>
@@ -1337,19 +1387,8 @@ export const LECTURES: Lecture[] = [
                     </div>
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-400">
                         <div class="h-56 overflow-hidden relative">
-                           <img src="https://i.imgur.com/6vN8KDZ.jpeg" alt="Wind Signals Info" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
-                           <a href="https://i.imgur.com/6vN8KDZ.jpeg" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
-                              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
-                           </a>
-                        </div>
-                        <div class="p-4">
-                           <p class="text-base text-slate-200 font-bold mb-1 font-quicksand"Heavily flooded open space, possibly a park or an area near a riverbank.</p>
-                        </div>
-                    </div>
-                    <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-cyan-400">
-                        <div class="h-56 overflow-hidden relative">
-                           <img src="https://i.imgur.com/JO5wBP9.jpeg" alt="Wind Signals Info" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
-                           <a href="https://i.imgur.com/JO5wBP9.jpeg" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
+                           <img src="hydrometeorological-hazards/JO5wBP9.jpeg" alt="Wind Signals Info" class="w-full h-full object-cover transform group-hover/image:scale-110 transition-transform duration-700 zoomable-image cursor-zoom-in" />
+                           <a href=" " target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 bg-white text-black p-3 rounded-full opacity-0 group-hover/image:opacity-100 transition-all z-20 hover:scale-110 hover:rotate-12 shadow-xl border-2 border-cyan-500" title="View Source">
                               <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
                            </a>
                         </div>
@@ -1366,33 +1405,35 @@ export const LECTURES: Lecture[] = [
             id: 'storm-surge-scientific',
             title: 'Storm Surge (Scientific)',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                <h3 class="text-4xl md:text-5xl font-fredoka font-black text-indigo-300 mb-2 uppercase drop-shadow-lg">Signs of an Impending Storm Surge</h3>
-                <h4 class="text-xl font-bold text-slate-300 font-quicksand mb-8">Scientific Forecasting Signs</h4>
-                <div class="space-y-6">
-                   <div class="bg-indigo-900/30 p-6 rounded-[2.5rem] border border-indigo-500/30 flex items-center hover:bg-indigo-900/50 transition-all hover:-translate-y-2 cursor-default group">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">📢</span>
-                      <p class="text-xl text-indigo-100 font-quicksand font-bold">PAGASA storm surge advisories issued with typhoon warnings</p>
-                   </div>
-                   <div class="bg-indigo-900/30 p-6 rounded-[2.5rem] border border-indigo-500/30 flex items-center hover:bg-indigo-900/50 transition-all hover:-translate-y-2 cursor-default group">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">💻</span>
-                      <p class="text-xl text-indigo-100 font-quicksand font-bold">Model simulations predicting surge height based on wind speed and tide</p>
-                   </div>
+             <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                    <div>
+                        <h3 class="text-4xl md:text-5xl font-fredoka font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-500 mb-6 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Signs of an Impending Storm Surge</h3>
+                        <p class="text-2xl text-slate-300 font-quicksand font-bold mb-6">
+                           Scientific Forecasting Signs
+                        </p>
+                    </div>
+
+                    <div class="bg-cyan-900/30 p-4 rounded-[2.5rem] border-2 border-cyan-500/30 hover:bg-cyan-900/50 transition-all duration-300 hover:scale-[1.02] group cursor-pointer hover:border-cyan-400">
+                        <ul class="space-y-3 text-sm text-cyan-100 font-quicksand font-bold">
+                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">📢</span> PAGASA storm surge advisories issued with typhoon warnings </p>
+                           <li class="flex items-start group hover:translate-x-2 transition-transform"><span class="text-cyan-400 mr-3 text-xl">💻</span> Model simulations predicting surge height based on wind speed and tide </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 text-cyan-200">
+                        <p class="font-fredoka text-2xl font-bold mb-2 uppercase">Example Scenario</p>
+                        <p class="text-lg opacity-90 font-quicksand font-medium">During Typhoon Yolanda, storm surges up to 7 meters high devastated Tacloban City.</p>
+                    <div class="text-sm font-bold text-cyan-500 mt-2 uppercase tracking-widest font-fredoka">Reference: DOST-PAGASA & JICA (2021), Storm Surge Hazard Mapping Project.</div>
                 </div>
-                
-                <div class="mt-8 bg-black/30 p-8 rounded-[2rem] border-l-8 border-indigo-500 hover:scale-[1.02] transition-transform duration-500">
-                    <h4 class="text-indigo-400 font-fredoka font-bold uppercase mb-2 text-2xl">Real World Example</h4>
-                    <p class="text-slate-200 text-xl font-quicksand font-medium">During Typhoon Yolanda, storm surges up to <span class="text-indigo-400 font-bold text-2xl">7 meters high</span> devastated Tacloban City.</p>
-                    <div class="text-sm font-bold text-indigo-500 mt-4 uppercase tracking-widest font-fredoka">Reference: DOST-PAGASA & JICA (2021), Storm Surge Hazard Mapping Project.</div>
                 </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-white border border-white/5 group/scroller flex flex-col shadow-2xl">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-white border border-white/5 group/scroller flex flex-col shadow-2xl">
                  <div class="bg-cyan-950 text-cyan-50 text-xs font-bold uppercase tracking-widest py-3 text-center flex-none flex items-center justify-center gap-2">
-                    <span>Source: PAGASA Warning Legends</span>
+                    <span>Source: PAGASA Tropical Cyclone</span>
                     <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                  </div>
                  <div class="flex-1 w-full bg-white relative overflow-hidden">
@@ -1413,13 +1454,13 @@ export const LECTURES: Lecture[] = [
             id: 'landslide-natural',
             title: 'Landslide (Natural)',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                 <div class="space-y-8">
+             <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
                     <div>
-                       <h3 class="text-4xl md:text-5xl font-fredoka font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-stone-500 mb-2 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Signs of an Impending Landslide</h3>
+                       <h3 class="text-4xl md:text-5xl font-fredoka font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-stone-500 mb-6 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Signs of an Impending Landslide</h3>
                        <p class="text-2xl text-slate-300 font-quicksand font-bold">Natural Signs</p>
                     </div>
 
@@ -1428,13 +1469,13 @@ export const LECTURES: Lecture[] = [
                             <li class="hover:translate-x-2 transition-transform p-3 hover:bg-white/5 rounded-xl flex items-center"><span class="mr-3 text-2xl">🏚️</span> Cracks appearing on the ground or walls</li>
                             <li class="hover:translate-x-2 transition-transform p-3 hover:bg-white/5 rounded-xl flex items-center"><span class="mr-3 text-2xl">🌳</span> Tilting of trees or poles</li>
                             <li class="hover:translate-x-2 transition-transform p-3 hover:bg-white/5 rounded-xl flex items-center"><span class="mr-3 text-2xl">🟤</span> Sudden appearance of muddy springs</li>
-                            <li class="hover:translate-x-2 transition-transform p-3 hover:bg-white/5 rounded-xl flex items-center"><span class="mr-3 text-2xl">🔊</span> Unusual sounds (like rumbling or cracking) coming from the slope</li>
+                            <li class="hover:translate-x-2 transition-transform p-3 hover:bg-white/5 rounded-xl flex items-center"><span class="mr-3 text-2xl">🔊</span> Unusual sounds coming from the slope</li>
                         </ul>
                     </div>
                  </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-emerald-400">
                         <div class="h-56 overflow-hidden relative">
@@ -1478,11 +1519,11 @@ export const LECTURES: Lecture[] = [
             id: 'landslide-scientific',
             title: 'Landslide (Scientific)',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
-
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                 <div class="space-y-8">
+            
+             <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
                     <div>
                        <h3 class="text-4xl md:text-5xl font-fredoka font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-stone-500 mb-2 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Signs of an Impending Landslide</h3>
                        <p class="text-2xl text-slate-300 font-quicksand font-bold">Scientific Forecasting Signs</p>
@@ -1504,7 +1545,7 @@ export const LECTURES: Lecture[] = [
                  </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-emerald-400">
                         <div class="h-56 overflow-hidden relative">
@@ -1537,33 +1578,35 @@ export const LECTURES: Lecture[] = [
             id: 'drought-natural',
             title: 'Drought (Natural)',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                <h3 class="text-5xl font-fredoka font-black text-orange-300 mb-2 uppercase drop-shadow-lg">Signs of an Impending Drought</h3>
-                <h4 class="text-xl font-bold text-slate-300 font-quicksand mb-8">Natural Signs</h4>
-                <div class="space-y-6">
-                   <div class="p-6 bg-orange-950/40 rounded-[2rem] border border-orange-500/20 hover:bg-orange-800/40 transition-colors flex items-center group cursor-default">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">☀️</span>
+              <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                   <div>
+                       <h3 class="text-5xl font-fredoka font-black text-orange-300 mb-6 uppercase drop-shadow-lg">Signs of an Impending Drought</h3>
+                       <p class="text-2xl text-slate-300 font-quicksand font-bold">Natural Signs</p>
+                   </div>
+                   <div class="p-5 bg-orange-950/40 rounded-[2rem] border border-orange-500/20 hover:bg-orange-800/40 transition-colors flex items-center group cursor-default">
+                      <span class="text-2xl mr-4 group-hover:scale-125 transition-transform">☀️</span>
                       <p class="text-xl text-slate-200 font-quicksand font-bold">Prolonged dry and hot days</p>
                    </div>
-                   <div class="p-6 bg-orange-950/40 rounded-[2rem] border border-orange-500/20 hover:bg-orange-800/40 transition-colors flex items-center group cursor-default">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">🏜️</span>
+                   <div class="p-5 bg-orange-950/40 rounded-[2rem] border border-orange-500/20 hover:bg-orange-800/40 transition-colors flex items-center group cursor-default">
+                      <span class="text-2xl mr-4 group-hover:scale-125 transition-transform">🏜️</span>
                       <p class="text-xl text-slate-200 font-quicksand font-bold">Drying of small water bodies (ponds, wells, creeks)</p>
                    </div>
-                   <div class="p-6 bg-orange-950/40 rounded-[2rem] border border-orange-500/20 hover:bg-orange-800/40 transition-colors flex items-center group cursor-default">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">🌾</span>
+                   <div class="p-5 bg-orange-950/40 rounded-[2rem] border border-orange-500/20 hover:bg-orange-800/40 transition-colors flex items-center group cursor-default">
+                      <span class="text-2xl mr-4 group-hover:scale-125 transition-transform">🌾</span>
                       <p class="text-xl text-slate-200 font-quicksand font-bold">Wilting crops and grass</p>
                    </div>
-                   <div class="p-6 bg-orange-950/40 rounded-[2rem] border border-orange-500/20 hover:bg-orange-800/40 transition-colors flex items-center group cursor-default">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">🌫️</span>
+                   <div class="p-5 bg-orange-950/40 rounded-[2rem] border border-orange-500/20 hover:bg-orange-800/40 transition-colors flex items-center group cursor-default">
+                      <span class="text-2xl mr-4 group-hover:scale-125 transition-transform">🌫️</span>
                       <p class="text-xl text-slate-200 font-quicksand font-bold">Dusty air and increased temperature</p>
                    </div>
-                </div>
-             </div>
+                 </div>
+              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-black/20 border border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-lg hover:border-emerald-400">
                         <div class="h-56 overflow-hidden relative">
@@ -1585,35 +1628,37 @@ export const LECTURES: Lecture[] = [
             id: 'drought-scientific',
             title: 'Drought (Scientific)',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 overflow-y-auto custom-scrollbar pr-2">
-                <h3 class="text-5xl font-fredoka font-black text-orange-300 mb-2 uppercase drop-shadow-lg">Signs of an Impending Drought</h3>
-                <h4 class="text-xl font-bold text-slate-300 font-quicksand mb-8">Scientific Forecasting Signs</h4>
-                <div class="space-y-6">
-                   <div class="p-6 bg-orange-900/30 rounded-[2rem] border border-orange-500/30 hover:bg-orange-900/50 transition-colors flex items-center group cursor-default">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">📢</span>
-                      <p class="text-xl text-orange-100 font-quicksand font-bold">El Niño advisory from PAGASA</p>
+              <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                   <div>
+                       <h3 class="text-5xl font-fredoka font-black text-orange-300 mb-6 uppercase drop-shadow-lg">Signs of an Impending Drought</h3>
+                       <p class="text-2xl text-slate-300 font-quicksand font-bold">Scientific Forecasting Signs</p>
                    </div>
-                   <div class="p-6 bg-orange-900/30 rounded-[2rem] border border-orange-500/30 hover:bg-orange-900/50 transition-colors flex items-center group cursor-default">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">📉</span>
-                      <p class="text-xl text-orange-100 font-quicksand font-bold">Low rainfall forecasts over multiple weeks</p>
+                   <div class="p-2 bg-orange-950/40 rounded-[2rem] border border-orange-500/20 hover:bg-orange-800/40 transition-colors flex items-center group cursor-default">
+                      <span class="text-2xl mr-4 group-hover:scale-125 transition-transform">📢</span>
+                      <p class="text-xl text-slate-200 font-quicksand font-bold">El Niño advisory from PAGASA </p>
                    </div>
-                   <div class="p-6 bg-orange-900/30 rounded-[2rem] border border-orange-500/30 hover:bg-orange-900/50 transition-colors flex items-center group cursor-default">
-                      <span class="text-3xl mr-4 group-hover:scale-125 transition-transform">💧</span>
-                      <p class="text-xl text-orange-100 font-quicksand font-bold">Decreased water level in reservoirs and dams</p>
+                   <div class="p-2 bg-orange-950/40 rounded-[2rem] border border-orange-500/20 hover:bg-orange-800/40 transition-colors flex items-center group cursor-default">
+                      <span class="text-2xl mr-4 group-hover:scale-125 transition-transform">📉</span>
+                      <p class="text-xl text-slate-200 font-quicksand font-bold">Low rainfall forecasts over multiple weeks </p>
                    </div>
-                </div>
-                
-                <div class="mt-8 pt-6 border-t-2 border-orange-500/30 text-orange-200">
+                   <div class="p-2 bg-orange-950/40 rounded-[2rem] border border-orange-500/20 hover:bg-orange-800/40 transition-colors flex items-center group cursor-default">
+                      <span class="text-2xl mr-4 group-hover:scale-125 transition-transform">💧</span>
+                      <p class="text-xl text-slate-200 font-quicksand font-bold">Decreased water level in reservoirs and dams </p>
+                   </div>
+                 </div>
+                  
+                 <div class="mt-8 pt-6 border-t-2 border-orange-500/30 text-orange-200">
                    <p class="font-fredoka text-2xl font-bold mb-2 uppercase">Example Scenario</p>
                    <p class="text-lg opacity-90 font-quicksand font-medium">PAGASA declared an El Niño event in 2019, leading to agricultural drought in Central Luzon.</p>
                    <div class="text-sm font-bold text-orange-500 mt-2 uppercase tracking-widest font-fredoka">Reference: PAGASA (2020), Climate Monitoring Bulletin.</div>
-                </div>
-             </div>
+                 </div>
+              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-white border border-white/5 group/scroller flex flex-col shadow-2xl">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-white border border-white/5 group/scroller flex flex-col shadow-2xl">
                  <div class="bg-cyan-950 text-cyan-50 text-xs font-bold uppercase tracking-widest py-3 text-center flex-none flex items-center justify-center gap-2">
                     <span>Source: PAGASA Warning Legends</span>
                     <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
@@ -1656,6 +1701,7 @@ export const LECTURES: Lecture[] = [
       description: 'Understand volcanic eruptions, ash fall, lahars, and pyroclastic flows.',
       topic: 'Volcano',
       imageUrl: 'cfdc22bb-2d99-4f5c-9705-2d2e998726f3.jpg',
+      bgMusicUrl: '/audio/volcano-lecture-bgm.mp3',
       readTime: 15,
       difficulty: 'Advanced',
       objectives: [
@@ -1669,6 +1715,59 @@ export const LECTURES: Lecture[] = [
          'Evacuation Planning'
       ],
       gameType: 'volcanic-eruption-sim',
+      decisionGame: [
+         {
+            id: 'dg-vo-1',
+            title: 'Ashfall Alert',
+            scenario: 'You are at home when a nearby volcano erupts. Thick, gray ash begins to fall heavily outside, turning the sky dark.',
+            options: [
+               {
+                  label: 'Go outside to sweep the ash off your roof immediately.',
+                  isCorrect: false,
+                  feedback: 'Unsafe. During active ashfall, visibility is low and inhaling ash is dangerous. You should wait until the ashfall stops and wear protective gear.'
+               },
+               {
+                  label: 'Close all windows and doors, and wear a mask.',
+                  isCorrect: true,
+                  feedback: 'Correct! preventing ash from entering your home and protecting your respiratory system is the priority during heavy ashfall.'
+               }
+            ]
+         },
+         {
+            id: 'dg-vo-2',
+            title: 'The Rumbling River',
+            scenario: 'Heavy rain is falling days after an eruption. You live near a river channel connected to the volcano and hear a loud rumbling sound like a freight train.',
+            options: [
+               {
+                  label: 'Evacuate immediately to high ground away from the river.',
+                  isCorrect: true,
+                  feedback: 'Excellent. This sound often indicates an approaching Lahar (mudflow). Lahars move fast along river valleys and can bury communities.'
+               },
+               {
+                  label: 'Stay inside your house and wait for the rain to stop.',
+                  isCorrect: false,
+                  feedback: 'Critical Error! If you are near a river channel, staying indoors puts you at risk of being buried or swept away by a Lahar.'
+               }
+            ]
+         },
+         {
+            id: 'dg-vo-3',
+            title: 'Silent Gas Threat',
+            scenario: 'While hiking near a volcanic crater, you smell a strong odor resembling rotten eggs and start feeling dizzy.',
+            options: [
+               {
+                  label: 'Sit down and rest until the dizziness passes.',
+                  isCorrect: false,
+                  feedback: 'Dangerous. The rotten egg smell indicates toxic sulfur gases. Staying low or resting in the area can lead to unconsciousness or death.'
+               },
+               {
+                  label: 'Cover your face and move away immediately against the wind.',
+                  isCorrect: true,
+                  feedback: 'Correct. You are detecting volcanic gases like Sulfur Dioxide. Leaving the area immediately prevents gas poisoning.'
+               }
+            ]
+         }
+      ],
       sections: [
          {
             id: 'melc',
@@ -1736,57 +1835,45 @@ export const LECTURES: Lecture[] = [
             id: 'pyroclastic',
             title: 'Pyroclastic Flow',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 pr-2">
-                 <div class="space-y-6">
-                    <h3 class="text-4xl md:text-6xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-600 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Pyroclastic Flow</h3>
-                    <p class="text-xl md:text-2xl text-slate-200 font-signika font-medium leading-relaxed">
+              <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                    <h3 class="text-3xl md:text-5xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-600 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Pyroclastic Flow</h3>
+                    <p class="text-lg md:text-xl text-slate-200 font-signika font-medium leading-relaxed">
                        A fast-moving mixture of hot gases, ash, and volcanic rocks that rush down the slopes of a volcano at speeds over <span class="text-red-400 font-bold text-3xl font-carter">100 km/h</span>.
                     </p>
                     
                     <div class="grid grid-cols-1 gap-4">
-                       <div class="bg-red-950/40 border-2 border-red-500/20 p-5 rounded-2xl flex items-start hover:bg-red-900/50 transition-all duration-300 hover:scale-[1.02] group hover:border-red-500 hover:shadow-lg">
+                       <div class="bg-red-950/40 border-2 border-red-500/20 p-3 rounded-2xl flex items-start hover:bg-red-900/50 transition-all duration-300 hover:scale-[1.02] group hover:border-red-500 hover:shadow-lg">
                           <div class="bg-red-500/20 p-3 rounded-xl mr-4 group-hover:bg-red-500/40 transition-colors group-hover:rotate-12">
-                             <svg class="w-8 h-8 text-red-400 group-hover:text-red-100" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                             <svg class="w-6 h-6 text-red-400 group-hover:text-red-100" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                           </div>
                           <div>
-                             <h4 class="text-red-300 font-bold uppercase text-xl mb-1 group-hover:text-white font-carter tracking-wide">Extreme Heat</h4>
-                             <p class="text-slate-300 text-lg group-hover:text-white font-signika">Temperatures can reach up to <span class="text-white font-bold bg-red-600 px-2 rounded">800°C</span>, causing instant incineration.</p>
+                             <h4 class="text-red-300 font-bold uppercase text-lg mb-1 group-hover:text-white font-carter tracking-wide">Extreme Heat</h4>
+                             <p class="text-slate-300 text-base group-hover:text-white font-signika">Temperatures can reach up to <span class="text-white font-bold bg-red-600 px-2 rounded">800°C</span>, causing instant incineration.</p>
                           </div>
                        </div>
-                       <div class="bg-red-950/40 border-2 border-red-500/20 p-5 rounded-2xl flex items-start hover:bg-red-900/50 transition-all duration-300 hover:scale-[1.02] group hover:border-red-500 hover:shadow-lg">
+                       <div class="bg-red-950/40 border-2 border-red-500/20 p-3 rounded-2xl flex items-start hover:bg-red-900/50 transition-all duration-300 hover:scale-[1.02] group hover:border-red-500 hover:shadow-lg">
                           <div class="bg-red-500/20 p-3 rounded-xl mr-4 group-hover:bg-red-500/40 transition-colors group-hover:rotate-12">
-                             <svg class="w-8 h-8 text-red-400 group-hover:text-red-100" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m8-2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                             <svg class="w-6 h-6 text-red-400 group-hover:text-red-100" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m8-2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                           </div>
                           <div>
-                             <h4 class="text-red-300 font-bold uppercase text-xl mb-1 group-hover:text-white font-carter tracking-wide">Massive Destruction</h4>
-                             <p class="text-slate-300 text-lg group-hover:text-white font-signika">Burial of areas under thick deposits of ash and rock; destruction of forests and crops.</p>
+                             <h4 class="text-red-300 font-bold uppercase text-lg mb-1 group-hover:text-white font-carter tracking-wide">Massive Destruction</h4>
+                             <p class="text-slate-300 text-base group-hover:text-white font-signika">Burial of areas under thick deposits of ash and rock; destruction of forests and crops.</p>
                           </div>
                        </div>
                     </div>
 
-                    <div class="bg-red-900/20 border-l-8 border-red-500 p-6 rounded-r-3xl hover:bg-red-900/40 transition-colors">
-                       <p class="text-red-100 italic text-xl font-signika">"The 1991 Mount Pinatubo eruption produced pyroclastic flows that buried towns in Pampanga and Zambales."</p>
+                    <div class="bg-red-900/20 border-l-8 border-red-500 p-3 rounded-r-3xl hover:bg-red-900/40 transition-colors">
+                       <p class="text-red-100 italic text-base font-signika">"The 1991 Mount Pinatubo eruption produced pyroclastic flows that buried towns in Pampanga and Zambales."</p>
                        <p class="text-red-400 text-sm mt-3 font-bold uppercase font-carter tracking-widest">— PHIVOLCS, 2020</p>
-                    </div>
-
-                    <div class="bg-orange-950/40 border-2 border-orange-500/30 p-5 rounded-2xl flex items-start mt-auto hover:bg-orange-900/60 transition-colors duration-500 group hover:border-orange-500 hover:shadow-xl">
-                        <div class="mr-4 mt-1 bg-orange-500/20 p-2 rounded-lg flex-shrink-0 group-hover:scale-125 transition-transform duration-300 group-hover:animate-bounce">
-                             <svg class="w-8 h-8 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-                        </div>
-                        <div>
-                             <h4 class="text-orange-300 font-bold uppercase text-lg mb-1 group-hover:text-white font-carter">Safety Protocol: Evacuation</h4>
-                             <p class="text-slate-300 text-base leading-relaxed group-hover:text-white font-signika">
-                                Pyroclastic flows are faster than vehicles. Evacuate immediately upon <span class="text-white font-bold bg-orange-600 px-2 py-0.5 rounded shadow-md">Alert Level 3 or 4</span>. Stay out of valleys.
-                             </p>
-                        </div>
                     </div>
                  </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-xl hover:border-red-500">
                         <div class="h-56 overflow-hidden relative">
@@ -1819,17 +1906,17 @@ export const LECTURES: Lecture[] = [
             id: 'ash-fall',
             title: 'Ash Fall',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 pr-2">
-                 <div class="space-y-6">
-                    <h3 class="text-4xl md:text-6xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Ash Fall (Tephra)</h3>
-                    <p class="text-xl md:text-2xl text-slate-300 font-signika font-medium leading-relaxed">
+              <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                    <h3 class="text-3xl md:text-5xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-500 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Ash Fall (Tephra)</h3>
+                    <p class="text-lg md:text-xl text-slate-200 font-signika font-medium leading-relaxed">
                        Volcanic ash and rock fragments ejected during explosive eruptions that fall to the ground.
                     </p>
 
-                    <div class="bg-slate-800/50 p-8 rounded-[2rem] border-2 border-slate-600/30 hover:bg-slate-800/70 transition-colors hover:border-slate-400 hover:shadow-lg">
+                    <div class="bg-slate-800/50 p-6 rounded-[2rem] border-2 border-slate-600/30 hover:bg-slate-800/70 transition-colors hover:border-slate-400 hover:shadow-lg">
                        <h4 class="font-bold text-white mb-4 uppercase flex items-center font-carter text-2xl tracking-wide">
                           <span class="w-4 h-4 bg-slate-400 rounded-full mr-4 animate-ping"></span>
                           Effects Analysis
@@ -1846,22 +1933,10 @@ export const LECTURES: Lecture[] = [
                        <p class="text-slate-200 italic text-xl font-signika">"The 2020 Taal Volcano eruption blanketed nearby towns with thick ash, forcing mass evacuations."</p>
                        <p class="text-slate-400 text-sm mt-3 font-bold uppercase font-carter tracking-widest">— PHIVOLCS, 2021</p>
                     </div>
-
-                    <div class="bg-slate-900/40 border-2 border-slate-500/30 p-5 rounded-2xl flex items-start mt-auto hover:bg-slate-800/40 transition-colors duration-500 group hover:shadow-lg hover:border-slate-400">
-                        <div class="mr-4 mt-1 bg-slate-500/20 p-2 rounded-lg flex-shrink-0 group-hover:scale-125 transition-transform duration-300 group-hover:rotate-12">
-                             <svg class="w-8 h-8 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        </div>
-                        <div>
-                             <h4 class="text-slate-200 font-bold uppercase text-lg mb-1 group-hover:text-white font-carter tracking-wide">Safety Protocol: Mask Up</h4>
-                             <p class="text-slate-400 text-base leading-relaxed group-hover:text-slate-200 font-signika">
-                                Wear N95 masks or cover mouth/nose with damp cloth. Close windows and doors to prevent ash entry.
-                             </p>
-                        </div>
-                    </div>
                  </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-xl hover:border-slate-400">
                         <div class="h-56 overflow-hidden relative">
@@ -1894,13 +1969,13 @@ export const LECTURES: Lecture[] = [
             id: 'lahar',
             title: 'Lahars',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 pr-2">
-                 <div class="space-y-6">
-                    <h3 class="text-4xl md:text-6xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-stone-300 to-stone-600 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Lahars (Mudflows)</h3>
-                    <p class="text-xl md:text-2xl text-slate-300 mb-6 font-signika font-medium leading-relaxed">
+              <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                    <h3 class="text-3xl md:text-5xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-stone-300 to-stone-600 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Lahars (Mudflows)</h3>
+                    <p class="text-lg md:text-xl text-slate-200 font-signika font-medium leading-relaxed">
                        Mixtures of volcanic ash, rocks, and water flowing down river valleys, often triggered by rain or melting ice.
                     </p>
                     
@@ -1929,22 +2004,10 @@ export const LECTURES: Lecture[] = [
                        <p class="text-stone-200 italic text-xl font-signika">"Post-eruption lahars from Mount Pinatubo continued for years after 1991, affecting Pampanga and Tarlac."</p>
                        <p class="text-stone-500 text-sm mt-3 font-bold uppercase font-carter tracking-widest">— Lagmay et al., 2020</p>
                     </div>
-
-                    <div class="bg-stone-950/40 border-2 border-stone-500/30 p-5 rounded-2xl flex items-start mt-auto hover:bg-stone-900/40 transition-colors duration-500 group hover:border-stone-400 hover:shadow-lg">
-                        <div class="mr-4 mt-1 bg-stone-500/20 p-2 rounded-lg flex-shrink-0 group-hover:scale-125 transition-transform duration-300 group-hover:rotate-12">
-                             <svg class="w-8 h-8 text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3" /></svg>
-                        </div>
-                        <div>
-                             <h4 class="text-stone-300 font-bold uppercase text-lg mb-1 group-hover:text-stone-200 font-carter tracking-wide">Safety Protocol: Avoid Valleys</h4>
-                             <p class="text-slate-400 text-base leading-relaxed group-hover:text-slate-300 font-signika">
-                                Lahars follow river valleys. Move to <span class="text-white font-bold bg-stone-600 px-2 py-0.5 rounded shadow-sm">high ground</span> immediately when rain starts near volcanic deposits.
-                             </p>
-                        </div>
-                    </div>
                  </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-xl hover:border-stone-400">
                         <div class="h-56 overflow-hidden relative">
@@ -1977,13 +2040,13 @@ export const LECTURES: Lecture[] = [
             id: 'lava-flows',
             title: 'Lava Flows',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 pr-2">
-                 <div class="space-y-6">
-                    <h3 class="text-4xl md:text-6xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Lava Flows</h3>
-                    <p class="text-xl md:text-2xl text-slate-300 mb-6 font-signika font-medium leading-relaxed">
+              <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                    <h3 class="text-3xl md:text-5xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Lava Flows</h3>
+                    <p class="text-lg md:text-xl text-slate-200 font-signika font-medium leading-relaxed">
                        Molten rock that flows from the crater during a non-explosive eruption.
                     </p>
 
@@ -2000,22 +2063,10 @@ export const LECTURES: Lecture[] = [
                        <p class="text-orange-200 italic text-xl font-signika">"The Mayon Volcano’s eruptions often produce lava flows that threaten nearby barangays in Albay."</p>
                        <p class="text-orange-400 text-sm mt-3 font-bold uppercase font-carter tracking-widest">— PHIVOLCS, 2023</p>
                     </div>
-
-                    <div class="bg-orange-950/40 border-2 border-orange-500/30 p-5 rounded-2xl flex items-start mt-auto hover:bg-orange-900/60 transition-colors duration-500 group hover:border-orange-500 hover:shadow-xl">
-                        <div class="mr-4 mt-1 bg-orange-500/20 p-2 rounded-lg flex-shrink-0 group-hover:scale-125 transition-transform duration-300 group-hover:rotate-12">
-                             <svg class="w-8 h-8 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        </div>
-                        <div>
-                             <h4 class="text-orange-300 font-bold uppercase text-lg mb-1 group-hover:text-white font-carter tracking-wide">Safety Protocol: Evacuate Calmly</h4>
-                             <p class="text-slate-300 text-base leading-relaxed group-hover:text-white font-signika">
-                                Lava moves slowly. You typically have time to <span class="text-white font-bold bg-orange-600 px-2 py-0.5 rounded shadow-md">walk away</span> from the path of flow. Follow designated evacuation routes.
-                             </p>
-                        </div>
-                    </div>
                  </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-xl hover:border-orange-500">
                         <div class="h-56 overflow-hidden relative">
@@ -2048,13 +2099,13 @@ export const LECTURES: Lecture[] = [
             id: 'volcanic-gases',
             title: 'Volcanic Gases',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 pr-2">
-                 <div class="space-y-6">
-                    <h3 class="text-4xl md:text-6xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-yellow-500 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Volcanic Gases</h3>
-                    <p class="text-xl md:text-2xl text-slate-300 mb-6 font-signika font-medium leading-relaxed">
+              <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                    <h3 class="text-3xl md:text-5xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-yellow-500 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Volcanic Gases</h3>
+                    <p class="text-lg md:text-xl text-slate-200 font-signika font-medium leading-relaxed">
                        Emissions of gases such as sulfur dioxide (SO₂), carbon dioxide (CO₂), and hydrogen sulfide (H₂S) released before, during, or after eruptions.
                     </p>
 
@@ -2071,22 +2122,10 @@ export const LECTURES: Lecture[] = [
                        <p class="text-yellow-200 italic text-xl font-signika">"Taal Volcano releases sulfur dioxide plumes, monitored by PHIVOLCS to estimate eruption probability."</p>
                        <p class="text-yellow-400 text-sm mt-3 font-bold uppercase font-carter tracking-widest">— PHIVOLCS Gas Monitoring Bulletin, 2023</p>
                     </div>
-
-                    <div class="bg-yellow-950/40 border-2 border-yellow-500/30 p-5 rounded-2xl flex items-start mt-auto hover:bg-yellow-900/60 transition-colors duration-500 group hover:border-yellow-500 hover:shadow-xl">
-                        <div class="mr-4 mt-1 bg-yellow-500/20 p-2 rounded-lg flex-shrink-0 group-hover:scale-125 transition-transform duration-300 group-hover:rotate-12">
-                             <svg class="w-8 h-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-                        </div>
-                        <div>
-                             <h4 class="text-yellow-300 font-bold uppercase text-lg mb-1 group-hover:text-white font-carter tracking-wide">Safety Protocol: Mask & Seal</h4>
-                             <p class="text-slate-300 text-base leading-relaxed group-hover:text-white font-signika">
-                                If you smell rotten eggs (sulfur), <span class="text-white font-bold bg-yellow-600 px-2 py-0.5 rounded shadow-sm">cover your face</span> and seal windows. Move to higher ground if gases accumulate.
-                             </p>
-                        </div>
-                    </div>
                  </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-xl hover:border-yellow-500">
                         <div class="h-56 overflow-hidden relative">
@@ -2119,13 +2158,13 @@ export const LECTURES: Lecture[] = [
             id: 'volcanic-tsunami',
             title: 'Volcanic Tsunami',
             content: `
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-250px)] relative pb-10 lg:pb-0">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start h-auto lg:h-[calc(100vh-320px)] relative pb-10 lg:pb-0">
              <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden lg:block"></div>
 
-             <div class="flex flex-col justify-start h-full lg:px-12 py-2 pr-2">
-                 <div class="space-y-6">
-                    <h3 class="text-4xl md:text-6xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-600 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Volcanic Tsunami</h3>
-                    <p class="text-xl md:text-2xl text-slate-300 mb-6 font-signika font-medium leading-relaxed">
+              <div class="flex flex-col justify-start h-full py-2 overflow-y-auto custom-scrollbar pr-2">
+                <div class="space-y-3">
+                    <h3 class="text-3xl md:text-5xl font-carter font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-600 mb-4 uppercase transition-all duration-500 hover:tracking-widest cursor-default drop-shadow-lg">Volcanic Tsunami</h3>
+                    <p class="text-lg md:text-xl text-slate-200 font-signika font-medium leading-relaxed">
                        Large sea waves generated by underwater eruptions, landslides, or caldera collapses.
                     </p>
 
@@ -2142,22 +2181,10 @@ export const LECTURES: Lecture[] = [
                        <p class="text-indigo-200 italic text-xl font-signika">"The 2022 Hunga Tonga–Hunga Ha’apai eruption generated a tsunami that reached the Philippines."</p>
                        <p class="text-indigo-400 text-sm mt-3 font-bold uppercase font-carter tracking-widest">— USGS, 2022</p>
                     </div>
-
-                    <div class="bg-indigo-950/40 border-2 border-indigo-500/30 p-5 rounded-2xl flex items-start mt-auto hover:bg-indigo-900/60 transition-colors duration-500 group hover:border-indigo-500 hover:shadow-xl">
-                        <div class="mr-4 mt-1 bg-indigo-500/20 p-2 rounded-lg flex-shrink-0 group-hover:scale-125 transition-transform duration-300 group-hover:rotate-12">
-                             <svg class="w-8 h-8 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
-                        </div>
-                        <div>
-                             <h4 class="text-indigo-300 font-bold uppercase text-lg mb-1 group-hover:text-white font-carter tracking-wide">Safety Protocol: Immediate Evacuation</h4>
-                             <p class="text-slate-300 text-base leading-relaxed group-hover:text-white font-signika">
-                                If you feel a strong quake near the coast or see sudden sea level changes, <span class="text-white font-bold bg-indigo-600 px-2 py-0.5 rounded shadow-sm">evacuate inland</span> immediately.
-                             </p>
-                        </div>
-                    </div>
                  </div>
              </div>
 
-             <div class="h-96 lg:h-full relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
+             <div class="h-96 lg:h-5/6 relative overflow-hidden rounded-[2rem] bg-black/20 border-2 border-white/5 group/scroller overflow-y-auto custom-scrollbar">
                  <div class="space-y-6 px-4 py-6">
                     <div class="bg-white/5 border-2 border-white/10 rounded-[2rem] overflow-hidden hover:bg-white/10 transition-colors group/image cursor-pointer relative shadow-xl hover:border-indigo-500">
                         <div class="h-56 overflow-hidden relative">

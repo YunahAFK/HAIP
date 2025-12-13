@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { Lecture, HazardTopic } from '../types';
-import { ArrowLeft, BrainCircuit, Gamepad2, Clock, ChevronRight, ChevronLeft, Target, Shield, Play, AlertTriangle, Zap, Waves, Maximize, Minimize, X, ArrowDown, ArrowUp, ZoomIn, RotateCcw } from 'lucide-react';
+import { ArrowLeft, BrainCircuit, Gamepad2, Clock, ChevronRight, ChevronLeft, Target, Shield, Play, AlertTriangle, Zap, Waves, Maximize, Minimize, X, ArrowDown, ArrowUp, ZoomIn, RotateCcw, Volume2, VolumeX } from 'lucide-react';
 import { QuizComponent } from '../components/QuizComponent';
 import { EarthquakeGame } from '../components/games/EarthquakeGame';
 import { FloodGame } from '../components/games/FloodGame';
@@ -87,10 +87,48 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
     return 1.5;
   });
 
+  // Audio State
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isMuted, setIsMuted] = useState(false);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const contentScrollRef = useRef<HTMLDivElement>(null);
   const initButtonRef = useRef<HTMLButtonElement>(null);
   const abortButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Audio Lifecycle Management
+  useEffect(() => {
+    // cleanup previous audio if exists
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current = null;
+    }
+
+    if (lecture.bgMusicUrl) {
+      const audio = new Audio(lecture.bgMusicUrl);
+      audio.loop = true;
+      audio.volume = 0.15; // set low background volume
+      audio.muted = isMuted; // sync with state
+      audioRef.current = audio;
+    }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, [lecture.id, lecture.bgMusicUrl]); // re-initialize when lecture changes
+
+  const toggleMute = () => {
+    setIsMuted(prev => {
+      const newState = !prev;
+      if (audioRef.current) {
+        audioRef.current.muted = newState;
+      }
+      return newState;
+    });
+  };
 
   // auto-scroll logic for Tutorial Step 3 & 4
   useEffect(() => {
@@ -161,9 +199,9 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
     }
   }, [activeSlideIndex]);
 
-  // Handle injected content image loading
+  // handle injected content image loading
   useEffect(() => {
-    // Small delay to ensure DOM is ready
+    // small delay to ensure DOM is ready
     const timer = setTimeout(() => {
       if (contentScrollRef.current) {
         const images = contentScrollRef.current.querySelectorAll('img');
@@ -171,7 +209,7 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
         images.forEach((img) => {
           if (img.complete) return; // Already loaded
 
-          // Add loading state classes
+          // add loading state classes
           img.style.opacity = '0';
           img.style.transition = 'opacity 0.5s ease-in-out';
 
@@ -220,7 +258,7 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
 
     if (!isFullscreen) {
       if (el) {
-        // Robust check for vendor prefixes
+        // robust check for vendor prefixes
         if (el.requestFullscreen) {
           el.requestFullscreen().catch((err: any) => {
             console.error(`Error attempting to enable full-screen mode: ${err.message}`);
@@ -329,13 +367,14 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
 
         {/* Top Right Controls Group */}
         <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-3">
+
           {/* Zoom Controls */}
           <div className="hidden sm:flex items-center bg-black/40 border border-white/10 rounded-full px-3 py-1.5 backdrop-blur-md shadow-lg transition-all hover:bg-black/60">
             <button onClick={resetZoom} title="Reset Zoom" className="pr-3 border-r border-white/10 text-slate-400 hover:text-white transition-colors flex items-center">
-              <RotateCcw className="w-4 h-4" />
+              <RotateCcw className="w-6 h-6" />
             </button>
             <div className="flex items-center pl-3">
-              <ZoomIn className="w-4 h-4 text-slate-300 mr-2" />
+              <ZoomIn className="w-6 h-6 text-slate-300 mr-2" />
               <input
                 type="range"
                 min="0.8"
@@ -347,6 +386,15 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
               />
             </div>
           </div>
+
+          {/* Mute Button for Briefing Screen */}
+          <button
+            onClick={toggleMute}
+            className="p-3 bg-black/40 border border-white/10 rounded-full text-slate-300 hover:text-white hover:bg-white/10 backdrop-blur-md transition-all shadow-lg group"
+            title={isMuted ? "Unmute Ambient Sound" : "Mute Ambient Sound"}
+          >
+            {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+          </button>
 
           {/* Fullscreen Toggle */}
           <button
@@ -444,8 +492,7 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
                 <button
                   ref={initButtonRef}
                   onClick={() => {
-                    // try fullscreen safely - iOS often doesn't support element fullscreen, 
-                    // so we wrap this to prevent crashing the click handler
+                    // try fullscreen safely
                     try {
                       const doc = document as any;
                       const isFullscreen = doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement;
@@ -461,6 +508,12 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
                     } catch (e) {
                       // ignore errors on devices that don't support it
                     }
+
+                    // Start Audio
+                    if (audioRef.current) {
+                      audioRef.current.play().catch(e => console.error("Audio playback blocked:", e));
+                    }
+
                     setShowStartMenu(false);
                   }}
                   className={`w-full group/btn relative overflow-hidden ${theme.buttonBg} ${theme.buttonHover} text-white font-black uppercase tracking-wider py-5 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] flex items-center justify-center cursor-pointer ${tutorialStep === 3 ? 'ring-4 ring-brand-500/50 shadow-[0_0_30px_rgba(14,165,233,0.5)] z-50' : ''}`}
@@ -544,6 +597,7 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
         </button>
 
         <div className="flex items-center space-x-3">
+
           {/* Zoom Controls */}
           <div className="flex items-center bg-black/20 border border-white/10 rounded-full px-3 py-1.5 mr-2">
             <button onClick={resetZoom} className="pr-3 border-r border-white/10 text-slate-400 hover:text-white transition-colors flex items-center" title="Reset Zoom">
@@ -563,6 +617,15 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
               />
             </div>
           </div>
+
+          {/* Mute Button */}
+          <button
+            onClick={toggleMute}
+            className="p-2 bg-black/20 border border-white/10 rounded-lg hover:bg-white/10 transition-colors text-slate-300 hover:text-white mr-2"
+            title={isMuted ? "Unmute Ambient Sound" : "Mute Ambient Sound"}
+          >
+            {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+          </button>
 
           <button
             onClick={toggleFullscreen}
@@ -667,8 +730,8 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
             onClick={handlePrev}
             disabled={isFirstSlide}
             className={`flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-xl font-bold transition-all ${isFirstSlide
-                ? 'opacity-0 pointer-events-none'
-                : 'bg-white/10 hover:bg-white/20 text-white'
+              ? 'opacity-0 pointer-events-none'
+              : 'bg-white/10 hover:bg-white/20 text-white'
               }`}
           >
             <ChevronLeft className="w-5 h-5 mr-2" />
@@ -680,8 +743,8 @@ export const LectureView: React.FC<LectureViewProps> = ({ lecture, onBack, tutor
               <div
                 key={idx}
                 className={`h-1.5 rounded-full transition-all duration-300 ${idx === activeSlideIndex
-                    ? `w-6 sm:w-8 ${theme.buttonBg}`
-                    : 'w-1.5 sm:w-2 bg-white/30'
+                  ? `w-6 sm:w-8 ${theme.buttonBg}`
+                  : 'w-1.5 sm:w-2 bg-white/30'
                   }`}
               />
             ))}
