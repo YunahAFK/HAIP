@@ -959,7 +959,7 @@ export const LECTURES: Lecture[] = [
          'Early Warning Analysis',
          'Disaster Preparedness'
       ],
-      gameType: 'flood-choice',
+      gameType: 'flood-sim',
       sections: [
          {
             id: 'melc',
@@ -1668,7 +1668,7 @@ export const LECTURES: Lecture[] = [
          'Warning Sign Recognition',
          'Evacuation Planning'
       ],
-      gameType: 'none',
+      gameType: 'volcanic-eruption-sim',
       sections: [
          {
             id: 'melc',

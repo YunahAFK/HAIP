@@ -2,18 +2,18 @@
 
 export type HazardTopic = 'Earthquake' | 'Flood' | 'Volcano' | 'General';
 
-export type GameType = 'earthquake-sim' | 'flood-choice' | 'none';
+export type GameType = 'earthquake-sim' | 'flood-sim' | 'volcanic-eruption-sim' | 'none';
 
 export interface QuizQuestion {
   id: string;
   question: string;
   options: string[];
-  correctAnswer: number; // Index of the correct option
+  correctAnswer: number; // index of the correct option
 }
 
 export interface TocItem {
   title: string;
-  sectionIndex: number; // Changed from id to sectionIndex for pagination
+  sectionIndex: number; // changed from id to sectionIndex for pagination
 }
 
 export interface LectureSection {
@@ -52,7 +52,7 @@ export interface Lecture {
   gameType: GameType;
 }
 
-// Game specific types
+// Game Specific Types
 export interface EQStep {
   id: string;
   text: string;
