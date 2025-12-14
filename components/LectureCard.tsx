@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Lecture } from '../types';
 import { Clock, BarChart, ChevronRight, Gamepad2, PlayCircle } from 'lucide-react';
@@ -34,8 +35,8 @@ export const LectureCard: React.FC<LectureCardProps> = ({ lecture, onClick }) =>
       {/* Tactical Header Bar */}
       <div className={`h-1.5 w-full ${TOPIC_STYLES[lecture.topic] || TOPIC_STYLES.General}`} />
 
-      {/* Image Container */}
-      <div className="relative h-48 bg-slate-900">
+      {/* Image Container - Using Aspect Ratio for Responsive Sizing */}
+      <div className="relative aspect-[16/10] bg-slate-900 w-full overflow-hidden">
         <ImageWithLoader 
           src={lecture.imageUrl} 
           alt={lecture.title}

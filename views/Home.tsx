@@ -3,7 +3,7 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { LECTURES } from '../data';
 import { LectureCard } from '../components/LectureCard';
-import { Search, Shield, Target, ChevronRight, X, ArrowDown, MousePointer } from 'lucide-react';
+import { Search, Shield, Target, ChevronRight, X, ArrowDown } from 'lucide-react';
 import { HazardTopic } from '../types';
 import { ImageWithLoader } from '../components/ImageWithLoader';
 
@@ -60,7 +60,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
     });
   }, [searchTerm, selectedTopic]);
 
-  // Determine Dialog Position based on step
+  // determine dialog position based on step
   const getDialogPosition = () => {
     switch (tutorialStep) {
       case 0: return 'bottom-8'; // Welcome - Bottom
@@ -71,7 +71,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
   };
 
   return (
-    <div className="relative w-full flex-1 flex flex-col">
+    <div className="relative w-full min-h-full">
       {/* Custom Animations Styles */}
       <style>{`
         @keyframes blob {
@@ -105,7 +105,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
       {/* --- TUTORIAL OVERLAY --- */}
       {tutorialStep !== null && tutorialStep <= 2 && (
         <>
-          {/* Backdrop - Only visible on Step 0 to allow visibility of components in Steps 1 & 2 */}
+          {/* Backdrop */}
           <div 
             className={`fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] transition-all duration-700 ${
               tutorialStep === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'
@@ -115,7 +115,6 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
           {/* Tutorial Dialog Box */}
           <div className={`fixed ${getDialogPosition()} left-0 right-0 z-[100] flex justify-center px-4 animate-in fade-in duration-500 transition-all ease-in-out`}>
              <div className="bg-slate-900 border border-brand-500/50 shadow-[0_0_50px_rgba(14,165,233,0.3)] max-w-2xl w-full rounded-2xl p-6 relative overflow-hidden">
-                {/* Decorative Tech Lines */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-transparent"></div>
                 <div className="absolute bottom-0 right-0 w-2/3 h-px bg-gradient-to-l from-brand-500/50 to-transparent"></div>
                 
@@ -159,8 +158,6 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
 
       {/* Background Visual Elements */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        
-        {/* Main Background Image - Layered First (Behind everything) */}
         <div className="absolute inset-0 z-0">
            <ImageWithLoader 
              src="gigapixel-u8c9kJ7.webp" 
@@ -168,23 +165,20 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
              containerClassName="w-full h-full"
              className="w-full h-full object-cover opacity-80"
            />
-           {/* Gradient Overlay reduced to allow colors to show */}
            <div className="absolute inset-0 bg-gradient-to-b from-slate-50/40 via-transparent to-slate-50/60" />
         </div>
         
-        {/* Ambient Animated Gradient Blobs - Layered Third */}
         <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[100px] animate-blob z-10 mix-blend-overlay" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[100px] animate-blob animation-delay-2000 z-10 mix-blend-overlay" />
         <div className="absolute top-[30%] left-[20%] w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[80px] animate-blob animation-delay-4000 z-10 mix-blend-overlay" />
 
-        {/* Drifting Particles - Layered Fourth */}
         <div className="absolute top-[60%] left-[10%] w-2 h-2 bg-slate-400 rounded-full animate-drift opacity-0 z-10" />
         <div className="absolute top-[40%] right-[20%] w-3 h-3 bg-blue-400 rounded-full animate-drift animation-delay-2000 opacity-0 z-10" />
         <div className="absolute top-[80%] left-[40%] w-1.5 h-1.5 bg-orange-400 rounded-full animate-drift animation-delay-6000 opacity-0 z-10" />
       </div>
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 py-12 lg:py-16">
-        {/* Hero / Dashboard Header - Refined Card */}
+        {/* Hero / Dashboard Header */}
         <div className="flex flex-col md:flex-row items-end justify-between mb-12 bg-white/80 backdrop-blur-md rounded-3xl p-8 lg:p-12 shadow-xl border border-white/40">
           <div className="w-full md:w-3/5 lg:w-1/2">
             <div className="flex items-center text-brand-700 font-bold tracking-widest text-xs lg:text-sm uppercase mb-3">
@@ -208,7 +202,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
           </div>
         </div>
 
-        {/* Controls Bar - HIGHLIGHTED IN STEP 1 */}
+        {/* Controls Bar */}
         <div 
           ref={controlsRef}
           className={`flex flex-col md:flex-row gap-4 mb-10 items-center justify-between bg-white/80 backdrop-blur-sm p-3 rounded-2xl shadow-sm border border-slate-200/60 transition-all duration-500 ${tutorialStep === 1 ? 'relative z-[70] ring-4 ring-brand-500/50 scale-[1.02] shadow-[0_0_50px_rgba(14,165,233,0.3)] bg-white' : ''}`}
@@ -250,7 +244,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
           </div>
         </div>
 
-        {/* Grid - HIGHLIGHTED IN STEP 2 */}
+        {/* Grid - Updated to 4 columns on XL screens */}
         <div 
           ref={gridRef}
           className={`transition-all duration-500 rounded-3xl ${tutorialStep === 2 ? 'relative z-[70] ring-4 ring-brand-500/50 p-4 bg-white/10 backdrop-blur-sm' : ''}`}
@@ -265,13 +259,12 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
           )}
 
           {filteredLectures.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 lg:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
               {filteredLectures.map(lecture => (
                 <LectureCard 
                   key={lecture.id} 
                   lecture={lecture} 
                   onClick={(id) => {
-                    // if tutorial is active, handle manual click gracefully
                     if (tutorialStep === 2) {
                       setTutorialStep(3);
                     }
