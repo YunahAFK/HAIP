@@ -31,7 +31,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
 
   const handleNextStep = () => {
     if (tutorialStep === null) return;
-    
+
     if (tutorialStep < 2) {
       setTutorialStep(tutorialStep + 1);
     } else if (tutorialStep === 2) {
@@ -53,8 +53,8 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
 
   const filteredLectures = useMemo(() => {
     return LECTURES.filter(lecture => {
-      const matchesSearch = lecture.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                            lecture.description.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch = lecture.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        lecture.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesTopic = selectedTopic === 'All' || lecture.topic === selectedTopic;
       return matchesSearch && matchesTopic;
     });
@@ -71,7 +71,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
   };
 
   return (
-    <div className="relative w-full flex-1 flex flex-col">
+    <div className="relative w-full flex-1 flex flex-col overflow-x-hidden">
       {/* Custom Animations Styles */}
       <style>{`
         @keyframes blob {
@@ -106,52 +106,51 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
       {tutorialStep !== null && tutorialStep <= 2 && (
         <>
           {/* Backdrop */}
-          <div 
-            className={`fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] transition-all duration-700 ${
-              tutorialStep === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'
-            }`} 
+          <div
+            className={`fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] transition-all duration-700 ${tutorialStep === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'
+              }`}
           />
 
           {/* Tutorial Dialog Box */}
           <div className={`fixed ${getDialogPosition()} left-0 right-0 z-[100] flex justify-center px-4 animate-in fade-in duration-500 transition-all ease-in-out`}>
-             <div className="bg-slate-900 border border-brand-500/50 shadow-[0_0_50px_rgba(14,165,233,0.3)] max-w-2xl w-full rounded-2xl p-6 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-transparent"></div>
-                <div className="absolute bottom-0 right-0 w-2/3 h-px bg-gradient-to-l from-brand-500/50 to-transparent"></div>
-                
-                <div className="flex items-start gap-6">
-                   <div className="flex-1">
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-brand-400 font-mono text-xs uppercase tracking-widest font-bold">
-                           System Message // Step {tutorialStep + 1} of 5
-                        </h3>
-                        <button onClick={completeTutorial} className="text-slate-500 hover:text-white transition-colors">
-                           <X className="w-4 h-4" />
-                        </button>
-                      </div>
-                      
-                      <p className="text-lg text-white font-medium mb-6 min-h-[3.5rem]">
-                        {tutorialStep === 0 && "Welcome Recruit. This is the HAIP Command Center. I will be your guide for this session."}
-                        {tutorialStep === 1 && "Use the Command Deck to identify specific hazard protocols or filter missions by category."}
-                        {tutorialStep === 2 && "Missions are displayed here. We will now select a mission to demonstrate the briefing protocol."}
-                      </p>
+            <div className="bg-slate-900 border border-brand-500/50 shadow-[0_0_50px_rgba(14,165,233,0.3)] max-w-2xl w-full rounded-2xl p-6 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-transparent"></div>
+              <div className="absolute bottom-0 right-0 w-2/3 h-px bg-gradient-to-l from-brand-500/50 to-transparent"></div>
 
-                      <div className="flex justify-end gap-3">
-                         <button 
-                           onClick={completeTutorial}
-                           className="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white uppercase tracking-wider transition-colors"
-                         >
-                            Skip Briefing
-                         </button>
-                         <button 
-                           onClick={handleNextStep}
-                           className="px-6 py-2 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold uppercase tracking-wider rounded-lg shadow-lg hover:shadow-brand-500/25 transition-all flex items-center"
-                         >
-                            {tutorialStep === 2 ? 'Select Mission' : 'Next'} <ChevronRight className="w-4 h-4 ml-1" />
-                         </button>
-                      </div>
-                   </div>
+              <div className="flex items-start gap-6">
+                <div className="flex-1">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className="text-brand-400 font-mono text-xs uppercase tracking-widest font-bold">
+                      System Message // Step {tutorialStep + 1} of 5
+                    </h3>
+                    <button onClick={completeTutorial} className="text-slate-500 hover:text-white transition-colors">
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  <p className="text-lg text-white font-medium mb-6 min-h-[3.5rem]">
+                    {tutorialStep === 0 && "Welcome Recruit. This is the HAIP Command Center. I will be your guide for this session."}
+                    {tutorialStep === 1 && "Use the Command Deck to identify specific hazard protocols or filter missions by category."}
+                    {tutorialStep === 2 && "Missions are displayed here. We will now select a mission to demonstrate the briefing protocol."}
+                  </p>
+
+                  <div className="flex justify-end gap-3">
+                    <button
+                      onClick={completeTutorial}
+                      className="px-4 py-2 text-xs font-bold text-slate-400 hover:text-white uppercase tracking-wider transition-colors"
+                    >
+                      Skip Briefing
+                    </button>
+                    <button
+                      onClick={handleNextStep}
+                      className="px-6 py-2 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold uppercase tracking-wider rounded-lg shadow-lg hover:shadow-brand-500/25 transition-all flex items-center"
+                    >
+                      {tutorialStep === 2 ? 'Select Mission' : 'Next'} <ChevronRight className="w-4 h-4 ml-1" />
+                    </button>
+                  </div>
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
         </>
       )}
@@ -159,15 +158,15 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
       {/* Background Visual Elements */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 z-0">
-           <ImageWithLoader 
-             src="gigapixel-u8c9kJ7.webp" 
-             alt="World Map Background" 
-             containerClassName="w-full h-full"
-             className="w-full h-full object-cover opacity-80"
-           />
-           <div className="absolute inset-0 bg-gradient-to-b from-slate-50/40 via-transparent to-slate-50/60" />
+          <ImageWithLoader
+            src="gigapixel-u8c9kJ7.webp"
+            alt="World Map Background"
+            containerClassName="w-full h-full"
+            className="w-full h-full object-cover opacity-80"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/40 via-transparent to-slate-50/60" />
         </div>
-        
+
         <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[100px] animate-blob z-10 mix-blend-overlay" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[100px] animate-blob animation-delay-2000 z-10 mix-blend-overlay" />
         <div className="absolute top-[30%] left-[20%] w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[80px] animate-blob animation-delay-4000 z-10 mix-blend-overlay" />
@@ -193,27 +192,27 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
               Select a learning module below to access comprehensive lessons, simulations, and safety protocols designed to build disaster resilience.
             </p>
           </div>
-          
+
           <div className="flex items-center gap-4 mt-8 md:mt-0 self-start md:self-end">
-             <div className="hidden md:block text-right pl-6 border-l-2 border-slate-200">
-                <div className="text-4xl lg:text-5xl font-black text-brand-600 leading-none">{LECTURES.length}</div>
-                <div className="text-[10px] lg:text-xs font-bold text-slate-500 uppercase tracking-widest mt-2">Active Modules</div>
-             </div>
+            <div className="hidden md:block text-right pl-6 border-l-2 border-slate-200">
+              <div className="text-4xl lg:text-5xl font-black text-brand-600 leading-none">{LECTURES.length}</div>
+              <div className="text-[10px] lg:text-xs font-bold text-slate-500 uppercase tracking-widest mt-2">Active Modules</div>
+            </div>
           </div>
         </div>
 
         {/* Controls Bar */}
-        <div 
+        <div
           ref={controlsRef}
           className={`flex flex-col md:flex-row gap-4 mb-10 items-center justify-between bg-white/80 backdrop-blur-sm p-3 rounded-2xl shadow-sm border border-slate-200/60 transition-all duration-500 ${tutorialStep === 1 ? 'relative z-[70] ring-4 ring-brand-500/50 scale-[1.02] shadow-[0_0_50px_rgba(14,165,233,0.3)] bg-white' : ''}`}
         >
           {tutorialStep === 1 && (
-             <div className="absolute -top-16 left-1/2 -translate-x-1/2 z-[80] flex flex-col items-center animate-bounce">
-                <div className="bg-brand-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg mb-2 uppercase tracking-wide whitespace-nowrap">
-                   Filter & Search
-                </div>
-                <ArrowDown className="w-8 h-8 text-brand-500 fill-current" />
-             </div>
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 z-[80] flex flex-col items-center animate-bounce">
+              <div className="bg-brand-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg mb-2 uppercase tracking-wide whitespace-nowrap">
+                Filter & Search
+              </div>
+              <ArrowDown className="w-8 h-8 text-brand-500 fill-current" />
+            </div>
           )}
 
           <div className="relative w-full md:w-80 lg:w-96">
@@ -232,11 +231,10 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
               <button
                 key={topic}
                 onClick={() => setSelectedTopic(topic)}
-                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all whitespace-nowrap uppercase tracking-wide ${
-                  selectedTopic === topic 
-                    ? 'bg-slate-900 text-white shadow-lg transform scale-105' 
-                    : 'bg-transparent text-slate-600 hover:bg-white/50 hover:text-slate-900'
-                }`}
+                className={`px-6 py-2.5 rounded-xl text-sm font-bold transition-all whitespace-nowrap uppercase tracking-wide ${selectedTopic === topic
+                  ? 'bg-slate-900 text-white shadow-lg transform scale-105'
+                  : 'bg-transparent text-slate-600 hover:bg-white/50 hover:text-slate-900'
+                  }`}
               >
                 {topic}
               </button>
@@ -245,31 +243,31 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
         </div>
 
         {/* Grid - Updated to 4 columns on XL screens */}
-        <div 
+        <div
           ref={gridRef}
           className={`transition-all duration-500 rounded-3xl ${tutorialStep === 2 ? 'relative z-[70] ring-4 ring-brand-500/50 p-4 bg-white/10 backdrop-blur-sm' : ''}`}
         >
           {tutorialStep === 2 && (
-             <div className="absolute -top-16 left-8 z-[80] flex flex-col items-start animate-bounce">
-                <div className="bg-brand-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg mb-2 uppercase tracking-wide whitespace-nowrap">
-                   Select Mission
-                </div>
-                <ArrowDown className="w-8 h-8 text-brand-500 fill-current ml-6" />
-             </div>
+            <div className="absolute -top-16 left-8 z-[80] flex flex-col items-start animate-bounce">
+              <div className="bg-brand-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg mb-2 uppercase tracking-wide whitespace-nowrap">
+                Select Mission
+              </div>
+              <ArrowDown className="w-8 h-8 text-brand-500 fill-current ml-6" />
+            </div>
           )}
 
           {filteredLectures.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
               {filteredLectures.map(lecture => (
-                <LectureCard 
-                  key={lecture.id} 
-                  lecture={lecture} 
+                <LectureCard
+                  key={lecture.id}
+                  lecture={lecture}
                   onClick={(id) => {
                     if (tutorialStep === 2) {
                       setTutorialStep(3);
                     }
                     onNavigate(id);
-                  }} 
+                  }}
                 />
               ))}
             </div>
@@ -277,7 +275,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
             <div className="flex flex-col items-center justify-center py-24 bg-white/60 backdrop-blur-sm rounded-3xl border-2 border-dashed border-slate-300 shadow-sm">
               <Target className="w-16 h-16 text-slate-300 mb-4" />
               <p className="text-slate-500 text-lg font-medium">No missions found matching criteria.</p>
-              <button 
+              <button
                 onClick={() => { setSearchTerm(''); setSelectedTopic('All'); }}
                 className="mt-4 text-brand-600 font-bold hover:underline uppercase tracking-wide text-sm"
               >
