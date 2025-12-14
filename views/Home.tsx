@@ -71,7 +71,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
   };
 
   return (
-    <div className="relative w-full flex-1 flex flex-col overflow-x-hidden">
+    <div className="relative w-full min-h-full">
       {/* Custom Animations Styles */}
       <style>{`
         @keyframes blob {
@@ -156,7 +156,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
       )}
 
       {/* Background Visual Elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 z-0">
           <ImageWithLoader
             src="gigapixel-u8c9kJ7.webp"
