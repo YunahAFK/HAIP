@@ -35,10 +35,10 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
     if (tutorialStep < 2) {
       setTutorialStep(tutorialStep + 1);
     } else if (tutorialStep === 2) {
-      // Transition to Lecture View for Step 3
+      // transition to Lecture View for step 3
       const firstLecture = filteredLectures[0] || LECTURES[0];
       if (firstLecture) {
-        setTutorialStep(3); // Next step in Lecture View
+        setTutorialStep(3); // next step in Lecture View
         onNavigate(firstLecture.id);
       } else {
         completeTutorial();
@@ -71,7 +71,7 @@ export const Home: React.FC<HomeProps> = ({ onNavigate, tutorialStep, setTutoria
   };
 
   return (
-    <div className="relative w-full min-h-full">
+    <div className="relative w-full flex-1 flex flex-col">
       {/* Custom Animations Styles */}
       <style>{`
         @keyframes blob {
